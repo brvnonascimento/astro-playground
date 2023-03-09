@@ -2,8 +2,6 @@
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
-export const prerender = true;
-
 export const getStaticPaths = async () => {
   const storyblokApi = useStoryblokApi();
 

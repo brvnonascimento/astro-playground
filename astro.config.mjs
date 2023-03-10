@@ -1,6 +1,7 @@
 import storyblok from "@storyblok/astro";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { defineConfig } from "astro/config";
+import vercelEdge from "@astrojs/vercel/edge";
 
 export default defineConfig({
   site: "https://astroship.web3templates.com",
@@ -22,4 +23,6 @@ export default defineConfig({
       },
     }),
   ],
+  output: "server",
+  adapter: vercelEdge(),
 });

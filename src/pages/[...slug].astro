@@ -2,20 +2,18 @@
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
-export const prerender = true;
-
 export const getStaticPaths = async () => {
   const storyblokApi = useStoryblokApi();
 
   const { data } = await storyblokApi.get("cdn/links", {
-    version: import.meta.env.DEV ? "draft" : "published",
+    version: "draft",
   });
 
-  const links = Object.values(data.links);
+  const links: Record<string, unknown>[] = Object.values(data.links);
 
   return links.map((link) => {
     return {
-      params: { slug: link.slug === "home" ? undefined : link.slug },
+      params: { slug: link?.slug === "home" ? undefined : link.slug },
     };
   });
 };
@@ -25,41 +23,11 @@ const { slug = "home" } = Astro.params;
 const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-  version: import.meta.env.DEV ? "draft" : "published",
+  // version: import.meta.env.DEV ? "draft" : "published",
+  version: "draft",
 });
 
 const story = data.story;
 ---
 
-<!-- <script>
-  import { storyblokInit, apiPlugin, useStoryblokBridge } from "@storyblok/js";
-
-  const astroPreview = document.querySelector<HTMLDivElement>("astro-preview");
-
-  if (!astroPreview) {
-    throw new Error("astro-preview not found");
-  }
-
-  const accessToken = astroPreview.dataset.accessToken;
-  const slug = astroPreview.dataset.slug;
-
-  const { storyblokApi } = storyblokInit({
-    accessToken: accessToken,
-    use: [apiPlugin],
-    // if you are using a space located in US region, use apiOptions.region:
-    apiOptions: {
-      region: "us", // region code here
-    },
-  });
-
-  const { data } = await storyblokApi.get(`cdn/stories/${slug ?? "home"}`, {
-    version: "draft",
-  });
-
-  useStoryblokBridge(data.story.id, console.log);
-</script> -->
-<astro-preview
-  data-access-token={import.meta.env.PUBLIC_STORYBLOK_ACCESS_TOKEN}
-  data-slug={slug}>
-  <StoryblokComponent blok={story.content} />
-</astro-preview>
+<StoryblokComponent blok={story.content} />

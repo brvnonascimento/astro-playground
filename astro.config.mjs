@@ -4,7 +4,6 @@ import { defineConfig } from "astro/config";
 import vercelStatic from "@astrojs/vercel/static";
 
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
   output: "static",
   adapter: vercelStatic(),
   vite: {

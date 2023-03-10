@@ -1,11 +1,9 @@
 import storyblok from "@storyblok/astro";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { defineConfig } from "astro/config";
-import vercelStatic from "@astrojs/vercel/static";
+import vercelServerless from "@astrojs/vercel/serverless";
 
 export default defineConfig({
-  output: "static",
-  adapter: vercelStatic(),
   vite: {
     plugins: [basicSsl()],
     server: {
@@ -24,4 +22,6 @@ export default defineConfig({
       },
     }),
   ],
+  output: "server",
+  adapter: vercelServerless(),
 });

@@ -1,6 +1,8 @@
 ---
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import "@fontsource/montserrat";
+import SiteLayout from "@layouts/SiteLayout.astro";
 
 export const getStaticPaths = async () => {
   const storyblokApi = useStoryblokApi();
@@ -30,4 +32,6 @@ const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
 const story = data.story;
 ---
 
-<StoryblokComponent blok={story.content} />
+<SiteLayout>
+  <StoryblokComponent blok={story.content} />
+</SiteLayout>

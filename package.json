@@ -27,6 +27,7 @@
     "gsap": "^3.11.4"
   },
   "devDependencies": {
-    "@types/gsap": "^3.0.0"
+    "@types/gsap": "^3.0.0",
+    "vite-plugin-singlefile": "^0.13.3"
   }
 }

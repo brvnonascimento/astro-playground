@@ -164,6 +164,23 @@ const fontScaleClass = fontScales[fontScale];
   }
 </style>
 
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  nav {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    position: relative;
+    background: red;
+  }
+</style>
+
 <script>
   const anchors = document.querySelectorAll("a");
   const isTouchDevice = "ontouchstart" in window;
@@ -213,17 +230,19 @@ const fontScaleClass = fontScales[fontScale];
   }
 </script>
 
-<html lang="en" class={}>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body data-barba="wrapper">
-    <nav>
-      <a href="/typography/major-third">Major Third</a>
-      <br />
-      <a href="/typography/golden-ratio">Golden Ratio</a>
-    </nav>
+    <header>
+      <nav>
+        <a href="/typography/major-third">Major Third</a>
+
+        <a href="/typography/golden-ratio">Golden Ratio</a>
+      </nav>
+    </header>
 
     <main
       data-barba="container"

@@ -1,11 +1,15 @@
 ---
 import "@fontsource/raleway";
 
-const { fontScale = "blog", ...htmlAttributes } = Astro.props;
+const { fontScale = "blog" } = Astro.props;
 
 const fontScales = {
   marketing: "marketing-font-scale",
   blog: "blog-font-scale",
+} as const;
+
+type Props = {
+  fontScale?: keyof typeof fontScales;
 };
 
 const fontScaleClass = fontScales[fontScale];
@@ -171,6 +175,7 @@ const fontScaleClass = fontScales[fontScale];
     ]);
 
     barba.init({
+      cacheIgnore: true,
       transitions: [
         {
           name: "opacity-transition",
@@ -209,12 +214,12 @@ const fontScaleClass = fontScales[fontScale];
   }
 </script>
 
-<html lang="en">
+<html lang="en" class={}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body data-barba="wrapper" class:list={fontScaleClass}>
+  <body data-barba="wrapper">
     <nav>
       <a href="/typography/major-third">Major Third</a>
       <br />
@@ -222,9 +227,9 @@ const fontScaleClass = fontScales[fontScale];
     </nav>
 
     <main
-      {...htmlAttributes}
       data-barba="container"
-      data-barba-namespace="home">
+      data-barba-namespace="home"
+      class={fontScaleClass}>
       <slot />
     </main>
   </body>

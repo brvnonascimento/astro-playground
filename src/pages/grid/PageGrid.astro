@@ -1,0 +1,25 @@
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  @container (min-width: 768px) {
+    .grid {
+      background: blue;
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  @container (min-width: 1200px) {
+    .grid {
+      background: red;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+</style>
+
+<div class="grid">
+  <slot />
+</div>

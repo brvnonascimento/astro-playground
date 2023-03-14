@@ -1,5 +1,6 @@
 ---
 import SiteLayout from "@layouts/SiteLayout.astro";
+import PageGrid from "@pages/grid/PageGrid.astro";
 import BlogFontScale from "styles/typography/BlogFontScale.astro";
 ---
 
@@ -9,15 +10,25 @@ import BlogFontScale from "styles/typography/BlogFontScale.astro";
   .small {
     font-size: var(--font-size-small);
   }
+
+  .card {
+    grid-column: span 4;
+    background: green;
+    padding: 1rem;
+  }
 </style>
 
 <SiteLayout>
-  <h1>Major Third</h1>
+  <PageGrid>
+    <div class="card">
+      <h1>Major Third</h1>
 
-  <p>
-    What looked like a small patch of purple grass, above five feet square, was
-    moving across the sand in their direction.
-  </p>
+      <p>
+        What looked like a small patch of purple grass, above five feet square,
+        was moving across the sand in their direction.
+      </p>
+    </div>
+  </PageGrid>
 
   <p>
     When it came near enough he perceived that it was not grass; there were no

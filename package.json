@@ -14,6 +14,7 @@
     "@astrojs/image": "^0.14.1",
     "@astrojs/sitemap": "^1.0.1",
     "@astrojs/vercel": "^3.2.0",
+    "@barba/core": "^2.9.7",
     "@fontsource/raleway": "^4.5.12",
     "@storyblok/astro": "^2.0.10",
     "@storyblok/js": "^2.1.0",
@@ -22,7 +23,10 @@
     "astro-feather-icons": "^1.0.2",
     "astro-icon": "^0.8.0",
     "astro-navbar": "^1.1.5",
-    "astro-seo": "^0.7.0"
+    "astro-seo": "^0.7.0",
+    "gsap": "^3.11.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/gsap": "^3.0.0"
+  }
 }

@@ -107,19 +107,45 @@ const htmlAttributes = Astro.props;
   }
 </style>
 
+<script>
+  const barba = (await import("@barba/core")).default;
+  const gsap = (await import("gsap")).default;
+
+  barba.init({
+    transitions: [
+      {
+        name: "opacity-transition",
+        leave: (data) => {
+          gsap.to(data.current.container, {
+            opacity: 0,
+          });
+        },
+        enter: (data) => {
+          gsap.from(data.next.container, {
+            opacity: 0,
+          });
+        },
+      },
+    ],
+  });
+</script>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <body data-barba="wrapper">
     <nav>
       <a href="/typography/major-third">Major Third</a>
       <br />
       <a href="/typography/golden-ratio">Golden Ratio</a>
     </nav>
 
-    <main {...htmlAttributes}>
+    <main
+      {...htmlAttributes}
+      data-barba="container"
+      data-barba-namespace="home">
       <slot />
     </main>
   </body>

@@ -12,25 +12,6 @@ const htmlAttributes = Astro.props;
     --color-background: var(--color-primary-dark);
 
     --color-text: #fff;
-
-    --font-size-h1: 4.209rem;
-    --font-size-h2: 3.157rem;
-    --font-size-h3: 2.369rem;
-    --font-size-h4: 1.777rem;
-    --font-size-h5: 1.333rem;
-    --font-size-body: 1rem;
-    --font-size-small: 0.75rem;
-
-    --font-family-heading: "Raleway", sans-serif;
-    --font-family-body: "Raleway", sans-serif;
-
-    --line-height-body: 1.75;
-    --line-height-heading: 1.3;
-
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semi-bold: 600;
-    --font-weight-bold: 700;
   }
 
   * {
@@ -84,6 +65,7 @@ const htmlAttributes = Astro.props;
 
   p {
     margin-bottom: 1rem;
+    max-width: 70ch;
   }
 
   p,
@@ -104,6 +86,15 @@ const htmlAttributes = Astro.props;
 
   li {
   }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr min(90%, 1200px) 1fr;
+  }
+
+  main > * {
+    grid-column: 2;
+  }
 </style>
 
 <html lang="en">
@@ -112,12 +103,12 @@ const htmlAttributes = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- <nav>
-      <a href="#">Home</a>
-      <a href="#">Posts</a>
-      <a href="#">Contact</a>
-    </nav> -->
-    <!-- <h1>{title}</h1> -->
+    <nav>
+      <a href="/typography/major-third">Major Third</a>
+      <br />
+      <a href="/typography/golden-ratio">Golden Ratio</a>
+    </nav>
+
     <main {...htmlAttributes}>
       <slot />
     </main>

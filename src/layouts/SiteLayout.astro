@@ -185,47 +185,51 @@ const fontScaleClass = fontScales[fontScale];
   const anchors = document.querySelectorAll("a");
   const isTouchDevice = "ontouchstart" in window;
 
-  const initBarba = async () => {
-    const [{ default: barba }, { default: gsap }] = await Promise.all([
-      import("@barba/core"),
-      import("gsap"),
+  const initRouteTransitions = async () => {
+    const [
+      { default: Swup },
+      { default: SwupHeadPlugin },
+      { default: SwupSlideTheme },
+      { default: SwupA11yPlugin },
+    ] = await Promise.all([
+      import("swup"),
+      import("@swup/head-plugin"),
+      import("@swup/slide-theme"),
+      import("@swup/a11y-plugin"),
     ]);
 
-    barba.init({
-      transitions: [
-        {
-          name: "opacity-transition",
-          leave: (data) => {
-            gsap.to(data.current.container, {
-              opacity: 0,
-            });
-          },
-          enter: (data) => {
-            gsap.from(data.next.container, {
-              opacity: 0,
-            });
-          },
-        },
+    const swup = new Swup({
+      plugins: [
+        new SwupHeadPlugin(),
+        new SwupSlideTheme(),
+        new SwupA11yPlugin(),
       ],
     });
   };
 
-  const initBarbaOnFirstInteraction = async () => {
-    initBarba();
+  const initRouteTransitionsOnFirstInteraction = async () => {
+    initRouteTransitions();
 
     anchors.forEach((anchor) => {
-      anchor.removeEventListener("mouseenter", initBarbaOnFirstInteraction);
+      anchor.removeEventListener(
+        "mouseenter",
+        initRouteTransitionsOnFirstInteraction
+      );
     });
   };
 
   if (isTouchDevice) {
-    // TODO: Check if there's a better way to lazy load barbajs and gsap on touch devices
-    await initBarba();
+    // TODO: Check if there's a better way to lazy load this  on touch devices
+    await initRouteTransitions();
   } else {
     anchors.forEach((anchor) => {
-      anchor.addEventListener("mouseenter", initBarbaOnFirstInteraction, {
-        once: true,
-      });
+      anchor.addEventListener(
+        "mouseenter",
+        initRouteTransitionsOnFirstInteraction,
+        {
+          once: true,
+        }
+      );
     });
   }
 </script>
@@ -235,7 +239,7 @@ const fontScaleClass = fontScales[fontScale];
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body data-barba="wrapper">
+  <body>
     <header>
       <nav>
         <a href="/typography/major-third">Major Third</a>
@@ -244,10 +248,7 @@ const fontScaleClass = fontScales[fontScale];
       </nav>
     </header>
 
-    <main
-      data-barba="container"
-      data-barba-namespace="home"
-      class={fontScaleClass}>
+    <main id="swup" class={fontScaleClass}>
       <slot />
     </main>
   </body>

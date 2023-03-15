@@ -162,6 +162,10 @@ const fontScaleClass = fontScales[fontScale];
   main > * {
     grid-column: 2;
   }
+
+  main[tabindex="-1"] {
+    outline: none;
+  }
 </style>
 
 <style>
@@ -198,7 +202,7 @@ const fontScaleClass = fontScales[fontScale];
       import("@swup/a11y-plugin"),
     ]);
 
-    const swup = new Swup({
+    new Swup({
       plugins: [
         new SwupHeadPlugin(),
         new SwupSlideTheme(),

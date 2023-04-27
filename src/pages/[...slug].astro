@@ -12,6 +12,8 @@ export const getStaticPaths = async () => {
 
   const links: Record<string, unknown>[] = Object.values(data.links);
 
+  console.log({links})
+
   return links.map((link) => {
     return {
       params: { slug: link?.slug === "home" ? undefined : link.slug },
@@ -23,12 +25,14 @@ const { slug = "home" } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 
-const { data } = await storyblokApi.get(`cdn/stories/pages/${slug}`, {
+
+// TODO: Figure out how to redirect to 404 page if story is not found
+const page = await storyblokApi.get(`cdn/stories/pages/${slug.replace(/pages/, '')}`, {
   // version: import.meta.env.DEV ? "draft" : "published",
   version: "draft",
 });
 
-const story = data.story;
+const story = page.data.story;
 ---
 
 <SiteLayout>

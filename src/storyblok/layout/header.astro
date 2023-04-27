@@ -23,6 +23,10 @@ const { blok } = Astro.props;
 
 <header {...storyblokEditable(blok)}>
   <nav data-field="navLinks">
-    {blok.navLinks.map((link) => <a href={"#"}>{link.title}</a>)}
+    {
+      blok.navLinks.map((link) => (
+        <a href={`/${link.page.slug}`}>{link.title}</a>
+      ))
+    }
   </nav>
 </header>

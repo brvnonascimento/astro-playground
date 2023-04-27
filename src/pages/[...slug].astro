@@ -23,7 +23,7 @@ const { slug = "home" } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 
-const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+const { data } = await storyblokApi.get(`cdn/stories/pages/${slug}`, {
   // version: import.meta.env.DEV ? "draft" : "published",
   version: "draft",
 });

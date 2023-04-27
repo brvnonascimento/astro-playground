@@ -1,5 +1,7 @@
 ---
 import "@fontsource/raleway";
+// import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+
 
 const { fontScale = "blog" } = Astro.props;
 
@@ -244,15 +246,7 @@ const fontScaleClass = fontScales[fontScale];
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
 
-        <a href="/typography/major-third">Major Third</a>
-
-        <a href="/typography/golden-ratio">Golden Ratio</a>
-      </nav>
-    </header>
 
     <main id="swup" class={fontScaleClass}>
       <slot />

@@ -14,6 +14,7 @@ export default defineConfig({
       components: {
         page: "storyblok/page",
         hero: "storyblok/hero",
+        header: "storyblok/layout/header",
       },
       apiOptions: {
         region: "us",

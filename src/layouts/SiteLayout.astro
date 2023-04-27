@@ -1,6 +1,5 @@
 ---
 import "@fontsource/raleway";
-import Swup from "@components/Swup.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
@@ -191,8 +190,6 @@ const header = data.story.content;
   <body class={fontScaleClass}>
     <StoryblokComponent blok={header} />
 
-    <Swup>
-      <slot />
-    </Swup>
+    <slot />
   </body>
 </html>

@@ -1,14 +1,15 @@
 ---
+import Main from "@components/Main.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
 const { blok } = Astro.props;
 ---
 
-<main {...storyblokEditable(blok)}>
+<Main {...storyblokEditable(blok)}>
   {
     blok.body?.map((blok) => {
       return <StoryblokComponent blok={blok} />;
     })
   }
-</main>
+</Main>

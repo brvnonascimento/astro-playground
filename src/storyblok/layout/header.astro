@@ -25,7 +25,9 @@ const { blok } = Astro.props;
   <nav data-field="navLinks">
     {
       blok.navLinks.map((link) => (
-        <a href={`/${link.page.slug}`}>{link.title}</a>
+        <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
+          {link.title}
+        </a>
       ))
     }
   </nav>

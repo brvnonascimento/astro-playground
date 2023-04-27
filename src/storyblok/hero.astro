@@ -4,6 +4,6 @@ import { storyblokEditable } from "@storyblok/astro";
 const { blok } = Astro.props;
 ---
 
-<div {...storyblokEditable(blok)}>
+<section {...storyblokEditable(blok)}>
   <h2 data-field="title">{blok.title}</h2>
-</div>
+</section>

@@ -1,9 +1,28 @@
-<header>
-  <nav>
-    <a href="/">Home</a>
+---
+import { storyblokEditable } from "@storyblok/astro";
 
-    <a href="/typography/major-third">Major Third</a>
+const { blok } = Astro.props;
+---
 
-    <a href="/typography/golden-ratio">Golden Ratio</a>
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  nav {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    position: relative;
+    background: red;
+  }
+</style>
+
+<header {...storyblokEditable(blok)}>
+  <nav data-field="navLinks">
+    {blok.navLinks.map((link) => <a href={"#"}>{link.title}</a>)}
   </nav>
 </header>

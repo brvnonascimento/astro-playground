@@ -1,7 +1,8 @@
 ---
 import "@fontsource/raleway";
-// import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
-
+import Swup from "@components/Swup.astro";
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
 const { fontScale = "blog" } = Astro.props;
 
@@ -15,6 +16,16 @@ type Props = {
 };
 
 const fontScaleClass = fontScales[fontScale];
+
+const storyblokApi = useStoryblokApi();
+
+// TODO: Figure out how to redirect to 404 page if story is not found
+const { data } = await storyblokApi.get(`cdn/stories/layout/header`, {
+  // version: import.meta.env.DEV ? "draft" : "published",
+  version: "draft",
+});
+
+const header = data.story.content;
 ---
 
 <style is:global>
@@ -170,86 +181,17 @@ const fontScaleClass = fontScales[fontScale];
   }
 </style>
 
-<style>
-  header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-
-  nav {
-    display: flex;
-    padding: 1rem;
-    gap: 1rem;
-    position: relative;
-    background: red;
-  }
-</style>
-
-<script>
-  const anchors = document.querySelectorAll("a");
-  const isTouchDevice = "ontouchstart" in window;
-
-  const initRouteTransitions = async () => {
-    const [
-      { default: Swup },
-      { default: SwupHeadPlugin },
-      { default: SwupSlideTheme },
-      { default: SwupA11yPlugin },
-    ] = await Promise.all([
-      import("swup"),
-      import("@swup/head-plugin"),
-      import("@swup/slide-theme"),
-      import("@swup/a11y-plugin"),
-    ]);
-
-    new Swup({
-      plugins: [
-        new SwupHeadPlugin(),
-        new SwupSlideTheme(),
-        new SwupA11yPlugin(),
-      ],
-    });
-  };
-
-  const initRouteTransitionsOnFirstInteraction = async () => {
-    initRouteTransitions();
-
-    anchors.forEach((anchor) => {
-      anchor.removeEventListener(
-        "mouseenter",
-        initRouteTransitionsOnFirstInteraction
-      );
-    });
-  };
-
-  if (isTouchDevice) {
-    // TODO: Check if there's a better way to lazy load this  on touch devices
-    await initRouteTransitions();
-  } else {
-    anchors.forEach((anchor) => {
-      anchor.addEventListener(
-        "mouseenter",
-        initRouteTransitionsOnFirstInteraction,
-        {
-          once: true,
-        }
-      );
-    });
-  }
-</script>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
 
+  <body class={fontScaleClass}>
+    <StoryblokComponent blok={header} />
 
-    <main id="swup" class={fontScaleClass}>
+    <Swup>
       <slot />
-    </main>
+    </Swup>
   </body>
 </html>

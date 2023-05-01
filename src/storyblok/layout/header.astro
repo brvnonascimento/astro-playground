@@ -46,8 +46,10 @@ const logo = {
 </style>
 
 <header {...storyblokEditable(blok)}>
-  <nav data-field="navLinks">
-    <Image src={logo.filename} alt={logo.alt} width={112} height={56} />
+  <nav>
+    <a href="/" title="Home">
+      <Image src={logo.filename} alt={logo.alt} width={112} height={56} />
+    </a>
 
     <ul>
       {

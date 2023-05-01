@@ -2,8 +2,13 @@
 import Main from "@components/Main.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import { PageStoryblok } from "@types";
 
 const { blok } = Astro.props;
+
+export type Props = {
+  blok: PageStoryblok;
+};
 ---
 
 <Main {...storyblokEditable(blok)}>

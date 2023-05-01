@@ -1,5 +1,10 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
+import { HeroStoryblok } from "@types";
+
+export type Props = {
+  blok: HeroStoryblok;
+};
 
 const { blok } = Astro.props;
 ---

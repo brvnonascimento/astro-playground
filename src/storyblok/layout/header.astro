@@ -1,7 +1,7 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
 
-import { HeaderStoryblok } from "@types";
+import { HeaderStoryblok, InternalLinkStoryblok, PageStoryblok } from "@types";
 
 export type Props = {
   blok: HeaderStoryblok;
@@ -29,12 +29,22 @@ const { blok } = Astro.props;
 
 <header {...storyblokEditable(blok)}>
   <nav data-field="navLinks">
-    {
-      blok.navLinks.map((link) => (
-        <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
-          {link.title}
-        </a>
-      ))
-    }
+    <ul>
+      {
+        blok?.navLinks?.map((link) => {
+          if (typeof link.page === "string") {
+            return null;
+          }
+
+          return (
+            <li>
+              <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
+                {link.title}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
   </nav>
 </header>

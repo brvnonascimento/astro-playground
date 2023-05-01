@@ -19,11 +19,14 @@ const { blok } = Astro.props;
   }
 
   nav {
-    display: flex;
-    padding: 1rem;
-    gap: 1rem;
-    position: relative;
     background: red;
+
+    & ul {
+      display: flex;
+      padding: 1rem;
+      gap: 1rem;
+      position: relative;
+    }
   }
 </style>
 

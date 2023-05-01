@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
 import { loadEnv } from "vite";
 import { run } from "vite-plugin-run";
+import image from "@astrojs/image";
 
 const env = loadEnv("", process.cwd(), "PUBLIC");
 
@@ -21,6 +22,9 @@ export default defineConfig({
     ],
   },
   integrations: [
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
     storyblok({
       accessToken: env.PUBLIC_STORYBLOK_ACCESS_TOKEN,
       components: {

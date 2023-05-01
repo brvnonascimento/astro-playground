@@ -13,7 +13,7 @@
     "sb:generate": "storyblok-generate-ts source=./components.$STORYBLOK_SPACE_ID.json target=./component-types-sb"
   },
   "dependencies": {
-    "@astrojs/image": "^0.14.1",
+    "@astrojs/image": "^0.16.6",
     "@astrojs/sitemap": "^1.0.1",
     "@astrojs/vercel": "^3.2.0",
     "@fontsource/raleway": "^4.5.12",
@@ -30,7 +30,11 @@
     "astro-icon": "^0.8.0",
     "astro-navbar": "^1.1.5",
     "astro-seo": "^0.7.0",
-    "gsap": "^3.11.4"
+    "gsap": "^3.11.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^8.3.2",
+    "postcss-subgrid": "^1.1.0",
+    "sharp": "^0.32.1"
   },
   "devDependencies": {
     "@types/": "swup/head-plugin",

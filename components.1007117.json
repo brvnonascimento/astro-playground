@@ -1,6 +1,30 @@
 {
   "components": [
     {
+      "name": "footer",
+      "display_name": null,
+      "created_at": "2023-05-01T22:52:11.418Z",
+      "updated_at": "2023-05-01T22:58:37.206Z",
+      "id": 73935,
+      "schema": {
+        "navLinks": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "footer",
+      "component_group_uuid": "94b47564-19c2-4793-b18b-285df4d9c522",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Layout"
+    },
+    {
       "name": "header",
       "display_name": null,
       "created_at": "2023-04-27T10:26:39.817Z",

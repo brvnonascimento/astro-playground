@@ -28,9 +28,12 @@ export default defineConfig({
     storyblok({
       accessToken: env.PUBLIC_STORYBLOK_ACCESS_TOKEN,
       components: {
+        // Layout
         page: "storyblok/page",
-        hero: "storyblok/hero",
         header: "storyblok/layout/header",
+        footer: "storyblok/layout/footer",
+        // Blocks
+        hero: "storyblok/hero",
       },
       apiOptions: {
         region: "us",

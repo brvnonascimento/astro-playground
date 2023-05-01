@@ -1,0 +1,31 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+
+import { FooterStoryblok } from "@types";
+
+export type Props = {
+  blok: FooterStoryblok;
+};
+
+const { blok } = Astro.props;
+---
+
+<footer {...storyblokEditable(blok)}>
+  <ul>
+    {
+      blok?.navLinks?.map((link) => {
+        if (typeof link.page === "string") {
+          return null;
+        }
+
+        return (
+          <li>
+            <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
+              {link.title}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</footer>

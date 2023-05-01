@@ -1,5 +1,12 @@
 import {StoryblokStory} from 'storyblok-generate-ts'
 
+export interface FooterStoryblok {
+  navLinks?: any[];
+  _uid: string;
+  component: "footer";
+  [k: string]: any;
+}
+
 export interface AssetStoryblok {
   alt?: string;
   copyright?: string;

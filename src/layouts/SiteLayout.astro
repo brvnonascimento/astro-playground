@@ -18,14 +18,30 @@ const fontScaleClass = fontScales[fontScale];
 
 const storyblokApi = useStoryblokApi();
 
-// TODO: Figure out how to redirect to 404 page if story is not found
-const { data } = await storyblokApi.get(`cdn/stories/layout/header`, {
-  // version: import.meta.env.DEV ? "draft" : "published",
-  version: "draft",
-  resolve_relations: "internalLink.page",
-});
+// TODO: Figure out how to batch all the layout data in a single request
 
-const header = data.story.content;
+// TODO: Figure out how to redirect to 404 page if story is not found
+const { data: headerData } = await storyblokApi.get(
+  `cdn/stories/layout/header`,
+  {
+    // version: import.meta.env.DEV ? "draft" : "published",
+    version: "draft",
+    resolve_relations: "internalLink.page",
+  }
+);
+
+const header = headerData.story.content;
+
+const { data: footerData } = await storyblokApi.get(
+  `cdn/stories/layout/footer`,
+  {
+    // version: import.meta.env.DEV ? "draft" : "published",
+    version: "draft",
+    resolve_relations: "internalLink.page",
+  }
+);
+
+const footer = footerData.story.content;
 ---
 
 <style is:global>
@@ -192,5 +208,7 @@ const header = data.story.content;
     <StoryblokComponent blok={header} />
 
     <slot />
+
+    <StoryblokComponent blok={footer} />
   </body>
 </html>

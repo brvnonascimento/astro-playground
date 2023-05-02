@@ -13,7 +13,11 @@ export type Props = {
 
 <Main {...storyblokEditable(blok)}>
   {
-    blok.body?.map((blok) => {
+    blok?.body?.map((blok) => {
+      if (!blok) {
+        return null;
+      }
+
       return <StoryblokComponent blok={blok} />;
     })
   }

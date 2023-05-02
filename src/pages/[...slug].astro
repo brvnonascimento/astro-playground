@@ -1,25 +1,25 @@
 ---
+import SiteLayout from "@layouts/SiteLayout.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
-import SiteLayout from "@layouts/SiteLayout.astro";
 
-export const getStaticPaths = async () => {
-  const storyblokApi = useStoryblokApi();
+// export const getStaticPaths = async () => {
+//   const storyblokApi = useStoryblokApi();
 
-  const { data } = await storyblokApi.get("cdn/links", {
-    version: "draft",
-  });
+//   const { data } = await storyblokApi.get("cdn/links", {
+//     version: "draft",
+//   });
 
-  const links: Record<string, unknown>[] = Object.values(data.links);
+//   const links: Record<string, unknown>[] = Object.values(data.links);
 
-  return links.map((link) => {
-    return {
-      params: { slug: link?.slug === "home" ? undefined : link.slug },
-    };
-  });
-};
+//   return links.map((link) => {
+//     return {
+//       params: { slug: link?.slug === "home" ? undefined : link.slug },
+//     };
+//   });
+// };
 
-const { slug = "home" } = Astro.params;
+const { slug = "/" } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 

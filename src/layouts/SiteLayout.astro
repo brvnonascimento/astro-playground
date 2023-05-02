@@ -115,6 +115,9 @@ const footer = footerData.story.content;
     background: var(--color-background);
     color: var(--color-text);
     line-height: var(--line-height-body);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content;
   }
 
   h1,
@@ -182,8 +185,9 @@ const footer = footerData.story.content;
   li {
   }
 
-  main,
-  header {
+  body > main,
+  header,
+  footer {
     display: grid;
     grid-template-columns: 1fr min(95%, 1200px) 1fr;
     container-type: inline-size;

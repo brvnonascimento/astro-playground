@@ -8,24 +8,46 @@ export type Props = {
 };
 
 const { blok } = Astro.props;
+
+const hasNavLinks = !!blok.navLinks && blok?.navLinks?.length > 0;
 ---
 
-<footer {...storyblokEditable(blok)}>
-  <ul>
-    {
-      blok?.navLinks?.map((link) => {
-        if (typeof link.page === "string") {
-          return null;
-        }
+<style>
+  footer {
+    justify-items: end;
+    margin-top: auto;
+    padding: 1rem;
 
-        return (
-          <li>
-            <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
-              {link.title}
-            </a>
-          </li>
-        );
-      })
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-  </ul>
+  }
+</style>
+
+<footer {...storyblokEditable(blok)}>
+  {
+    hasNavLinks ? (
+      <ul>
+        <h3>Pages</h3>
+
+        {blok?.navLinks?.map((link) => {
+          if (typeof link.page === "string") {
+            return null;
+          }
+
+          return (
+            <li>
+              <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
+                {link.title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    ) : null
+  }
 </footer>

@@ -29,25 +29,27 @@ const hasNavLinks = !!blok.navLinks && blok?.navLinks?.length > 0;
 </style>
 
 <footer {...storyblokEditable(blok)}>
-  {
-    hasNavLinks ? (
-      <ul>
-        <h3>Pages</h3>
+  <section>
+    <h3>Pages</h3>
 
-        {blok?.navLinks?.map((link) => {
-          if (typeof link.page === "string") {
-            return null;
-          }
+    {
+      hasNavLinks ? (
+        <ul>
+          {blok?.navLinks?.map((link) => {
+            if (typeof link.page === "string") {
+              return null;
+            }
 
-          return (
-            <li>
-              <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
-                {link.title}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    ) : null
-  }
+            return (
+              <li>
+                <a href={`/${link.page.slug === "home" ? "" : link.page.slug}`}>
+                  {link.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      ) : null
+    }
+  </section>
 </footer>

@@ -10,19 +10,19 @@ const props = Astro.props;
     const [
       { default: Swup },
       { default: SwupHeadPlugin },
-      { default: SwupSlideTheme },
+      { default: SwupFadeTheme },
       { default: SwupA11yPlugin },
     ] = await Promise.all([
       import("swup"),
       import("@swup/head-plugin"),
-      import("@swup/slide-theme"),
+      import("@swup/fade-theme"),
       import("@swup/a11y-plugin"),
     ]);
 
     new Swup({
       plugins: [
         new SwupHeadPlugin(),
-        new SwupSlideTheme(),
+        new SwupFadeTheme(),
         new SwupA11yPlugin(),
       ],
     });

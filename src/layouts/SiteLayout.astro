@@ -2,20 +2,8 @@
 import "@fontsource/raleway";
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import { fontScales } from "styles/fontScales";
 import "styles/globals.css";
-
-const { fontScale = "blog" } = Astro.props;
-
-const fontScales = {
-  marketing: "marketing-font-scale",
-  blog: "blog-font-scale",
-} as const;
-
-type Props = {
-  fontScale?: keyof typeof fontScales;
-};
-
-const fontScaleClass = fontScales[fontScale];
 
 const storyblokApi = useStoryblokApi();
 
@@ -51,7 +39,7 @@ const footer = footerData.story.content;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
-  <body class={fontScaleClass}>
+  <body class={fontScales.regular}>
     <StoryblokComponent blok={header} />
 
     <slot />

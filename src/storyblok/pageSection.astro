@@ -11,9 +11,13 @@ const { blok } = Astro.props;
 
 <style>
   section {
-    min-height: var(--available-page-height);
+    min-height: 100vh;
     display: flex;
     align-items: center;
+
+    &:first-of-type {
+      min-height: var(--available-page-height);
+    }
   }
 </style>
 

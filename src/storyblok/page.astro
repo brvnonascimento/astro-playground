@@ -3,6 +3,7 @@ import Main from "@components/Main.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import { PageStoryblok } from "@types";
+import { fontScales } from "styles/fontScales";
 
 const { blok } = Astro.props;
 
@@ -11,7 +12,7 @@ export type Props = {
 };
 ---
 
-<Main {...storyblokEditable(blok)}>
+<Main class={fontScales.marketing} {...storyblokEditable(blok)}>
   {
     blok?.body?.map((blok) => {
       if (!blok) {

@@ -34,6 +34,7 @@ export default defineConfig({
         footer: "storyblok/layout/footer",
         // Blocks
         hero: "storyblok/hero",
+        pageSection: "storyblok/pageSection",
       },
       apiOptions: {
         region: "us",

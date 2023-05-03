@@ -1,7 +1,7 @@
 import {StoryblokStory} from 'storyblok-generate-ts'
 
 export interface FooterStoryblok {
-  navLinks?: any[];
+  navLinks?: InternalLinkStoryblok[];
   _uid: string;
   component: "footer";
   [k: string]: any;
@@ -44,9 +44,23 @@ export interface InternalLinkStoryblok {
 }
 
 export interface PageStoryblok {
-  body?: HeroStoryblok[];
+  body?: (HeroStoryblok | PageSectionStoryblok)[];
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface PageSectionStoryblok {
+  columns?: any[];
+  _uid: string;
+  component: "pageSection";
+  [k: string]: any;
+}
+
+export interface TextColumnStoryblok {
+  content?: any;
+  _uid: string;
+  component: "Text Column";
   [k: string]: any;
 }

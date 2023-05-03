@@ -1,9 +1,10 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
-import { HeroStoryblok } from "@types";
+import { PageSectionStoryblok } from "@types";
+import TextColumn from "storyblok/textColumn.astro";
 
 export type Props = {
-  blok: HeroStoryblok;
+  blok: PageSectionStoryblok;
 };
 
 const { blok } = Astro.props;
@@ -11,16 +12,21 @@ const { blok } = Astro.props;
 
 <style>
   section {
-    min-height: 100vh;
     display: flex;
     align-items: center;
-
-    &:first-of-type {
-      min-height: var(--available-page-height);
-    }
+    min-height: var(--available-page-height);
   }
 </style>
 
 <section {...storyblokEditable(blok)}>
-  <h1 data-field="title">{blok.title}</h1>
+  {
+    blok.columns?.map((column) => {
+      switch (column.component) {
+        case "Text Column":
+          return <TextColumn blok={column.content} />;
+        default:
+          return null;
+      }
+    })
+  }
 </section>

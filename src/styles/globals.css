@@ -16,21 +16,57 @@
   --font-family-heading: "Raleway", sans-serif;
   --font-family-body: "Raleway", sans-serif;
 
-  --font-size-h1-golden-ratio: 11.089rem;
   --font-size-h1-perfect-fourth: 4.209rem;
+  --font-size-h1-perfect-fifth: 7.594rem;
   --font-size-h1: clamp(
     var(--font-size-h1-perfect-fourth),
-    2.83rem + 6.88vw,
-    var(--font-size-h1-golden-ratio)
+    3.532rem + 3.385vw,
+    var(--font-size-h1-perfect-fifth)
   );
 
-  --font-size-h2: 6.854rem;
-  --font-size-h3: 4.236rem;
-  --font-size-h4: 2.618rem;
-  --font-size-h5: 1.618rem;
+  --font-size-h2-perfect-fourth: 3.157rem;
+  --font-size-h2-perfect-fifth: 5.063rem;
+  --font-size-h2: clamp(
+    var(--font-size-h2-perfect-fourth),
+    2.7758rem + 1.906vw,
+    var(--font-size-h2-perfect-fifth)
+  );
+
+  --font-size-h3-perfect-fourth: 2.369rem;
+  --font-size-h3-perfect-fifth: 3.375rem;
+  --font-size-h3: clamp(
+    var(--font-size-h3-perfect-fourth),
+    2.1678rem + 1.006vw,
+    var(--font-size-h3-perfect-fifth)
+  );
+
+  --font-size-h4-perfect-fourth: 1.777rem;
+  --font-size-h4-perfect-fifth: 2.25rem;
+  --font-size-h4: clamp(
+    var(--font-size-h4-perfect-fourth),
+    1.6824rem + 0.473vw,
+    var(--font-size-h4-perfect-fifth)
+  );
+
+  --font-size-h5-perfect-fourth: 1.333rem;
+  --font-size-h5-perfect-fifth: 1.5rem;
+  --font-size-h5: clamp(
+    var(--font-size-h5-perfect-fourth),
+    1.2996rem + 0.167vw,
+    var(--font-size-h5-perfect-fifth)
+  );
 
   --font-size-body-normal: 1rem;
-  --font-size-body-small: 0.618rem;
+
+  --font-size-body-small-perfect-fourth: 0.75rem;
+  --font-size-body-small-perfect-fifth: 0.667rem;
+  --font-size-body-small: clamp(
+    var(--font-size-body-small-perfect-fourth),
+    0.7666rem + -0.083vw,
+    var(--font-size-body-small-perfect-fifth)
+  );
+
+  /* TODO: Check if this is right */
   --font-size-body-extra-small: 0.236rem;
 
   --font-weight-normal: 400;

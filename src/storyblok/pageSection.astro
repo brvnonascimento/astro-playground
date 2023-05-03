@@ -1,4 +1,5 @@
 ---
+import PageGrid from "@pages/grid/PageGrid.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import { PageSectionStoryblok } from "@types";
 import TextColumn from "storyblok/textColumn.astro";
@@ -11,14 +12,14 @@ const { blok } = Astro.props;
 ---
 
 <style>
-  section {
+  .section {
     display: flex;
     align-items: center;
     min-height: var(--available-page-height);
   }
 </style>
 
-<section {...storyblokEditable(blok)}>
+<PageGrid class="section" {...storyblokEditable(blok)}>
   {
     blok.columns?.map((column) => {
       switch (column.component) {
@@ -29,4 +30,4 @@ const { blok } = Astro.props;
       }
     })
   }
-</section>
+</PageGrid>

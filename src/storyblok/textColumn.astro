@@ -6,4 +6,10 @@ const { blok } = Astro.props;
 const renderedRichText = renderRichText(blok);
 ---
 
+<style>
+  div {
+    grid-column: span var(--page-grid-column-count);
+  }
+</style>
+
 <div set:html={renderedRichText} />

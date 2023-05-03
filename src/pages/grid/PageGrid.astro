@@ -1,25 +1,36 @@
+---
+const { class: className, as, ...props } = Astro.props;
+
+type Props = {
+  as?: "section" | "div";
+  class?: string;
+};
+
+const Element = as ?? "section";
+---
+
 <style>
   .grid {
+    --page-grid-column-count: 4;
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--page-grid-column-count), 1fr);
     gap: 1rem;
   }
 
   @container (min-width: 768px) {
     .grid {
-      background: blue;
-      grid-template-columns: repeat(8, 1fr);
+      --page-grid-column-count: 8;
     }
   }
 
   @container (min-width: 1200px) {
     .grid {
-      background: red;
-      grid-template-columns: repeat(12, 1fr);
+      --page-grid-column-count: 12;
     }
   }
 </style>
 
-<div class="grid">
+<Element class:list={["grid", className]} {...props}>
   <slot />
-</div>
+</Element>

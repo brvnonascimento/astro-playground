@@ -1,8 +1,8 @@
 ---
 import PageGrid from "@pages/grid/PageGrid.astro";
 import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import { PageSectionStoryblok } from "@types";
-import TextColumn from "storyblok/textColumn.astro";
 
 export type Props = {
   blok: PageSectionStoryblok;
@@ -20,14 +20,5 @@ const { blok } = Astro.props;
 </style>
 
 <PageGrid class="section" {...storyblokEditable(blok)}>
-  {
-    blok.columns?.map((column) => {
-      switch (column.component) {
-        case "Text Column":
-          return <TextColumn blok={column.content} />;
-        default:
-          return null;
-      }
-    })
-  }
+  {blok.columns?.map((column) => <StoryblokComponent blok={column} />)}
 </PageGrid>

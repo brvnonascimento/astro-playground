@@ -1,9 +1,14 @@
 ---
 import { renderRichText } from "@storyblok/astro";
+import { ColumnStoryblok } from "@types";
 
 const { blok } = Astro.props;
 
-const renderedRichText = renderRichText(blok);
+type Props = {
+  blok: ColumnStoryblok;
+};
+
+const renderedRichText = renderRichText(blok.content);
 ---
 
 <style>

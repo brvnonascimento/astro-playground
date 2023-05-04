@@ -35,6 +35,7 @@ export default defineConfig({
         // Blocks
         hero: "storyblok/hero",
         pageSection: "storyblok/pageSection",
+        column: "storyblok/column",
       },
       apiOptions: {
         region: "us",

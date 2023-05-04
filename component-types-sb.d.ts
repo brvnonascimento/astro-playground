@@ -1,5 +1,22 @@
 import {StoryblokStory} from 'storyblok-generate-ts'
 
+export interface AutoLayoutStoryblok {
+  mobile?: any;
+  tablet?: any;
+  desktop?: any;
+  layout?: "vertical" | "horizontal";
+  _uid: string;
+  component: "autoLayout";
+  [k: string]: any;
+}
+
+export interface ColumnStoryblok {
+  content?: any;
+  _uid: string;
+  component: "column";
+  [k: string]: any;
+}
+
 export interface FooterStoryblok {
   navLinks?: InternalLinkStoryblok[];
   _uid: string;
@@ -55,12 +72,5 @@ export interface PageSectionStoryblok {
   columns?: any[];
   _uid: string;
   component: "pageSection";
-  [k: string]: any;
-}
-
-export interface TextColumnStoryblok {
-  content?: any;
-  _uid: string;
-  component: "Text Column";
   [k: string]: any;
 }

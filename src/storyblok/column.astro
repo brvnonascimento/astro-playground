@@ -14,7 +14,14 @@ const extractImgTag = (htmlString: string): string => {
   return htmlString.replace(regex, "$2<$1>$3</$1>");
 };
 
-const renderedRichText = extractImgTag(renderRichText(blok.content));
+const removeEmptyTags = (htmlString: string): string => {
+  const regex = /<([^\s>]+)(\s[^>]*)?>\s*<\/\1>/g;
+  return htmlString.replace(regex, "");
+};
+
+const renderedRichText = removeEmptyTags(
+  extractImgTag(renderRichText(blok.content))
+);
 
 const { classNames } = resolveStylesBlocks(blok?.styles);
 ---

@@ -10,16 +10,60 @@ export type Props = {
 
 const { blok } = Astro.props;
 
-const { classNames } = resolveStylesBlocks(blok?.styles);
+const { classNames, wrapperClassNames } = resolveStylesBlocks(blok?.styles);
+
+const sectionClassList = ["section", classNames];
 ---
 
 <style>
   .section {
     min-height: var(--available-page-height);
     position: relative;
+    grid-column: 2 / -2;
+  }
+
+  .wrapper {
+    display: subgrid;
+    grid-column: 1 / -1;
+
+    &.span-full-screen {
+      & > .section {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &.tablet-span-full-screen {
+      @container (min-width: 768px) {
+        & > .section {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+
+    &.desktop-span-full-screen {
+      @container (min-width: 1024px) {
+        & > .section {
+          grid-column: 1 / -1;
+        }
+      }
+    }
   }
 </style>
 
-<section class:list={["section", classNames]} {...storyblokEditable(blok)}>
-  {blok.columns?.map((column) => <StoryblokComponent blok={column} />)}
-</section>
+{
+  wrapperClassNames ? (
+    <div class:list={["wrapper", wrapperClassNames]}>
+      <section class:list={sectionClassList} {...storyblokEditable(blok)}>
+        {blok.columns?.map((column) => (
+          <StoryblokComponent blok={column} />
+        ))}
+      </section>
+    </div>
+  ) : (
+    <section class:list={sectionClassList} {...storyblokEditable(blok)}>
+      {blok.columns?.map((column) => (
+        <StoryblokComponent blok={column} />
+      ))}
+    </section>
+  )
+}

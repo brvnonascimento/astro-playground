@@ -40,7 +40,7 @@ export interface AutoLayoutStoryblok {
   verticalResizingOnMobile: "hugContent" | "fillContainer";
   verticalResizingOnTablet: "hugContent" | "fillContainer";
   verticalResizingOnDesktop: "hugContent" | "fillContainer";
-  horizontalResizingOnMobile?: "hugContent" | "fillContainer";
+  horizontalResizingOnMobile: "hugContent" | "fillContainer";
   horizontalResizingOnTablet: "" | "hugContent" | "fillContainer";
   horizontalResizingOnDesktop: "" | "hugContent" | "fillContainer";
   _uid: string;
@@ -101,8 +101,20 @@ export interface PageStoryblok {
 export interface PageSectionStoryblok {
   title: string;
   columns?: any[];
-  styles?: AutoLayoutStoryblok[];
+  styles?: (AutoLayoutStoryblok | WrapperStoryblok)[];
   _uid: string;
   component: "pageSection";
+  [k: string]: any;
+}
+
+export interface WrapperStoryblok {
+  mobile?: any;
+  tablet?: any;
+  desktop?: any;
+  shouldContainerizeOnMobile?: boolean;
+  shouldContainerizeOnTablet?: boolean;
+  shouldContainerizeOnDesktop?: boolean;
+  _uid: string;
+  component: "wrapper";
   [k: string]: any;
 }

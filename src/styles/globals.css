@@ -215,31 +215,137 @@ main[tabindex="-1"] {
 
   &.vertical {
     flex-direction: column;
+
+    &.alignTopLeft,
+    &.alignLeft,
+    &.alignBottomLeft {
+      justify-content: flex-start;
+    }
+
+    &.alignTopCenter,
+    &.alignCenter,
+    &.alignBottomCenter {
+      justify-content: center;
+    }
+
+    &.alignTopRight,
+    &.alignRight,
+    &.alignBottomRight {
+      justify-content: flex-end;
+    }
   }
 
   &.horizontal {
     flex-direction: row;
+
+    &.alignTopLeft,
+    &.alignLeft,
+    &.alignBottomLeft {
+      align-items: flex-start;
+    }
+
+    &.alignTopCenter,
+    &.alignCenter,
+    &.alignBottomCenter {
+      align-items: center;
+    }
+
+    &.alignTopRight,
+    &.alignRight,
+    &.alignBottomRight {
+      align-items: flex-end;
+    }
   }
 
-  /* Tablet styles */
   @container (min-width: 768px) {
     &.tablet-vertical {
       flex-direction: column;
+
+      &.tablet-alignTopLeft,
+      &.tablet-alignLeft,
+      &.tablet-alignBottomLeft {
+        justify-content: flex-start;
+      }
+
+      &.tablet-alignTopCenter,
+      &.tablet-alignCenter,
+      &.tablet-alignBottomCenter {
+        justify-content: center;
+      }
+
+      &.tablet-alignTopRight,
+      &.tablet-alignRight,
+      &.tablet-alignBottomRight {
+        justify-content: flex-end;
+      }
     }
 
     &.tablet-horizontal {
       flex-direction: row;
+
+      &.tablet-alignTopLeft,
+      &.tablet-alignLeft,
+      &.tablet-alignBottomLeft {
+        align-items: flex-start;
+      }
+
+      &.tablet-alignTopCenter,
+      &.tablet-alignCenter,
+      &.tablet-alignBottomCenter {
+        align-items: center;
+      }
+
+      &.tablet-alignTopRight,
+      &.tablet-alignRight,
+      &.tablet-alignBottomRight {
+        align-items: flex-end;
+      }
     }
   }
 
-  /* Desktop styles */
   @container (min-width: 1024px) {
     &.desktop-vertical {
       flex-direction: column;
+
+      &.desktop-alignTopLeft,
+      &.desktop-alignLeft,
+      &.desktop-alignBottomLeft {
+        justify-content: flex-start;
+      }
+
+      &.desktop-alignTopCenter,
+      &.desktop-alignCenter,
+      &.desktop-alignBottomCenter {
+        justify-content: center;
+      }
+
+      &.desktop-alignTopRight,
+      &.desktop-alignRight,
+      &.desktop-alignBottomRight {
+        justify-content: flex-end;
+      }
     }
 
     &.desktop-horizontal {
       flex-direction: row;
+
+      &.desktop-alignTopLeft,
+      &.desktop-alignLeft,
+      &.desktop-alignBottomLeft {
+        align-items: flex-start;
+      }
+
+      &.desktop-alignTopCenter,
+      &.desktop-alignCenter,
+      &.desktop-alignBottomCenter {
+        align-items: center;
+      }
+
+      &.desktop-alignTopRight,
+      &.desktop-alignRight,
+      &.desktop-alignBottomRight {
+        align-items: flex-end;
+      }
     }
   }
 }

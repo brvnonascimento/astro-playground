@@ -9,9 +9,19 @@ type Props = {
   blok: ColumnStoryblok;
 };
 
-const renderedRichText = renderRichText(blok.content);
+const extractImgTag = (htmlString: string): string => {
+  const regex = /<([^>]+)>(\s*<img[^>]*>\s*)(.*?)<\/\1>/g;
+  return htmlString.replace(regex, "$2<$1>$3</$1>");
+};
+
+const renderedRichText = extractImgTag(renderRichText(blok.content));
 
 const { classNames } = resolveStylesBlocks(blok?.styles);
 ---
 
-<div class={classNames} set:html={renderedRichText} />
+<style>
+  .column {
+  }
+</style>
+
+<div class:list={["column", classNames]} set:html={renderedRichText} />

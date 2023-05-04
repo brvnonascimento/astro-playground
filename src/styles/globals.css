@@ -213,6 +213,7 @@ main[tabindex="-1"] {
 .autoLayout {
   display: flex;
 
+  /* Vertical Layout */
   &.vertical {
     flex-direction: column;
 
@@ -234,7 +235,9 @@ main[tabindex="-1"] {
       justify-content: flex-end;
     }
   }
+  /*  */
 
+  /* Horizontal Layout */
   &.horizontal {
     flex-direction: row;
 
@@ -256,8 +259,29 @@ main[tabindex="-1"] {
       align-items: flex-end;
     }
   }
+  /*  */
+
+  /* Vertical Resizing */
+  &.verticalResizing-hugContent {
+    height: auto;
+  }
+
+  &.verticalResizing-fillContainer {
+    height: 100%;
+  }
+  /*  */
+
+  /* Horizontal Resizing */
+  &.horizontalResizing-hugContent {
+    width: auto;
+  }
+  &.horizontalResizing-fillContainer {
+    width: 100%;
+  }
+  /*  */
 
   @container (min-width: 768px) {
+    /* Vertical Layout */
     &.tablet-vertical {
       flex-direction: column;
 
@@ -279,7 +303,9 @@ main[tabindex="-1"] {
         justify-content: flex-end;
       }
     }
+    /*  */
 
+    /* Horizontal Layout */
     &.tablet-horizontal {
       flex-direction: row;
 
@@ -301,9 +327,30 @@ main[tabindex="-1"] {
         align-items: flex-end;
       }
     }
+    /*  */
+
+    /* Vertical Resizing */
+    &.tablet-verticalResizing-hugContent {
+      height: auto;
+    }
+
+    &.tablet-verticalResizing-fillContainer {
+      height: 100%;
+    }
+    /*  */
+
+    /* Horizontal Resizing */
+    &.tablet-horizontalResizing-hugContent {
+      width: auto;
+    }
+    &.tablet-horizontalResizing-fillContainer {
+      width: 100%;
+    }
+    /*  */
   }
 
   @container (min-width: 1024px) {
+    /* Vertical Layout */
     &.desktop-vertical {
       flex-direction: column;
 
@@ -325,7 +372,9 @@ main[tabindex="-1"] {
         justify-content: flex-end;
       }
     }
+    /*  */
 
+    /* Horizontal Layout */
     &.desktop-horizontal {
       flex-direction: row;
 
@@ -347,5 +396,25 @@ main[tabindex="-1"] {
         align-items: flex-end;
       }
     }
+    /*  */
+
+    /* Vertical Resizing */
+    &.desktop-verticalResizing-hugContent {
+      height: auto;
+    }
+
+    &.desktop-verticalResizing-fillContainer {
+      height: 100%;
+    }
+    /*  */
+
+    /* Horizontal Resizing */
+    &.desktop-horizontalResizing-hugContent {
+      width: auto;
+    }
+    &.desktop-horizontalResizing-fillContainer {
+      width: 100%;
+    }
+    /*  */
   }
 }

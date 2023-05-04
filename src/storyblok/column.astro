@@ -14,10 +14,4 @@ const renderedRichText = renderRichText(blok.content);
 const { classNames } = resolveStylesBlocks(blok?.styles);
 ---
 
-<style>
-  div {
-    height: 100%;
-  }
-</style>
-
 <div class={classNames} set:html={renderedRichText} />

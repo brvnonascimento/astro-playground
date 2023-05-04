@@ -4,7 +4,7 @@
       "name": "autoLayout",
       "display_name": "Auto Layout",
       "created_at": "2023-05-03T02:42:47.821Z",
-      "updated_at": "2023-05-04T19:18:20.572Z",
+      "updated_at": "2023-05-04T21:22:36.185Z",
       "id": 74277,
       "schema": {
         "mobile": {
@@ -12,7 +12,9 @@
           "keys": [
             "layout",
             "layoutOnMobile",
-            "alignmentOnMobile"
+            "alignmentOnMobile",
+            "verticalResizingOnMobile",
+            "horizontalResizingOnMobile"
           ],
           "key": "mobile",
           "pos": 0
@@ -22,7 +24,9 @@
           "keys": [
             "layout",
             "layoutOnTablet",
-            "alignmentOnTablet"
+            "alignmentOnTablet",
+            "verticalResizingOnTablet",
+            "horizontalResizingOnTablet"
           ],
           "key": "tablet",
           "pos": 1
@@ -32,7 +36,9 @@
           "keys": [
             "layout",
             "layoutOnDesktop",
-            "alignmentOnDesktop"
+            "alignmentOnDesktop",
+            "verticalResizingOnDesktop",
+            "horizontalResizingOnDesktop"
           ],
           "key": "desktop",
           "pos": 2
@@ -56,7 +62,8 @@
           "exclude_empty_option": true,
           "key": "layout",
           "pos": 3,
-          "display_name": "Layout"
+          "display_name": "Layout",
+          "required": true
         },
         "layoutOnTablet": {
           "type": "option",
@@ -75,7 +82,8 @@
           ],
           "default_value": "vertical",
           "exclude_empty_option": true,
-          "display_name": "Layout"
+          "display_name": "Layout",
+          "required": true
         },
         "layoutOnDesktop": {
           "type": "option",
@@ -94,7 +102,8 @@
           ],
           "default_value": "vertical",
           "exclude_empty_option": true,
-          "display_name": "Layout"
+          "display_name": "Layout",
+          "required": true
         },
         "alignmentOnMobile": {
           "type": "option",
@@ -148,7 +157,8 @@
             }
           ],
           "default_value": "alignTopLeft",
-          "display_name": "Alignment"
+          "display_name": "Alignment",
+          "required": true
         },
         "alignmentOnTablet": {
           "type": "option",
@@ -202,7 +212,8 @@
             }
           ],
           "default_value": "alignTopLeft",
-          "display_name": "Alignment"
+          "display_name": "Alignment",
+          "required": true
         },
         "alignmentOnDesktop": {
           "type": "option",
@@ -256,13 +267,131 @@
           ],
           "exclude_empty_option": true,
           "default_value": "alignTopLeft",
-          "display_name": "Alignment"
+          "display_name": "Alignment",
+          "required": true
+        },
+        "verticalResizingOnMobile": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "823df394-6532-495e-b47a-09fd79eb8433",
+              "name": "Hug Content",
+              "value": "hugContent"
+            },
+            {
+              "_uid": "0ae7c7e5-98e2-47e3-972c-b0f7e3c6293f",
+              "value": "fillContainer",
+              "name": "Fill Container"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "hugContent",
+          "display_name": "Vertical Resizing",
+          "required": true
+        },
+        "verticalResizingOnTablet": {
+          "type": "option",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "options": [
+            {
+              "_uid": "f099a059-06a5-4bbd-8102-5438d7cb1f25",
+              "name": "Hug Content",
+              "value": "hugContent"
+            },
+            {
+              "_uid": "6bbd7808-0504-4e9e-a706-e9d57c53eef5",
+              "value": "fillContainer",
+              "name": "Fill Container"
+            }
+          ],
+          "default_value": "hugContent",
+          "display_name": "Vertical Resizing",
+          "required": true
+        },
+        "verticalResizingOnDesktop": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "d5038dde-36ab-4670-82bc-ed19dcda0b0d",
+              "name": "Hug Content",
+              "value": "hugContent"
+            },
+            {
+              "_uid": "b7382278-2691-4e4a-bfd3-c46dc4a8d18e",
+              "value": "fillContainer",
+              "name": "Fill Container"
+            }
+          ],
+          "default_value": "hugContent",
+          "exclude_empty_option": true,
+          "display_name": "Vertical Resizing",
+          "required": true
+        },
+        "horizontalResizingOnMobile": {
+          "type": "option",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "display_name": "Horizontal Resizing",
+          "options": [
+            {
+              "_uid": "9b0f8f8f-bd9a-4f07-a6b4-34dafe529a2d",
+              "name": "Hug Content",
+              "value": "hugContent"
+            },
+            {
+              "_uid": "37a30c86-cd65-4211-89d8-7710bf615128",
+              "value": "fillContainer",
+              "name": "Fill Container"
+            }
+          ],
+          "default_value": "hugContent"
+        },
+        "horizontalResizingOnTablet": {
+          "type": "option",
+          "use_uuid": true,
+          "display_name": "Horizontal Resizing",
+          "options": [
+            {
+              "_uid": "4056dbf7-92cb-44e2-847e-057b79e0bdb0",
+              "name": "Hug Content",
+              "value": "hugContent"
+            },
+            {
+              "_uid": "491c7c3e-0f9c-457d-84e5-b933e4b96a0d",
+              "value": "fillContainer",
+              "name": "Fill Container"
+            }
+          ],
+          "default_value": "hugContent",
+          "required": true
+        },
+        "horizontalResizingOnDesktop": {
+          "type": "option",
+          "display_name": "Horizontal Resizing",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "6cb7dfba-ea6e-497d-b6b5-623e1c1c2e2d",
+              "name": "Hug Content",
+              "value": "hugContent"
+            },
+            {
+              "_uid": "4cfb2efd-8fda-4fe8-973d-b6513fd3c8d1",
+              "value": "fillContainer",
+              "name": "Fill Container"
+            }
+          ],
+          "default_value": "hugContent",
+          "required": true
         }
       },
       "image": null,
       "preview_field": null,
       "is_root": false,
-      "preview_tmpl": null,
+      "preview_tmpl": "",
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
@@ -449,28 +578,34 @@
       "name": "pageSection",
       "display_name": "Page Section",
       "created_at": "2023-05-02T22:51:54.083Z",
-      "updated_at": "2023-05-04T16:12:53.240Z",
+      "updated_at": "2023-05-04T21:09:31.365Z",
       "id": 74231,
       "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
         "columns": {
           "type": "bloks",
           "key": "Columns",
-          "pos": 0
+          "pos": 1
         },
         "styles": {
           "type": "bloks",
           "keys": [],
-          "pos": 1,
+          "pos": 2,
           "restrict_type": "groups",
           "restrict_components": true,
           "component_whitelist": [],
           "component_group_whitelist": [
             "051724a1-f338-4385-bc93-ba373664ccc7"
-          ]
+          ],
+          "default_value": "fillContainer"
         }
       },
       "image": null,
-      "preview_field": null,
+      "preview_field": "title",
       "is_root": false,
       "preview_tmpl": null,
       "is_nestable": true,

@@ -4,10 +4,10 @@ export interface AutoLayoutStoryblok {
   mobile?: any;
   tablet?: any;
   desktop?: any;
-  layoutOnMobile?: "vertical" | "horizontal";
-  layoutOnTablet?: "vertical" | "horizontal";
-  layoutOnDesktop?: "vertical" | "horizontal";
-  alignmentOnMobile?:
+  layoutOnMobile: "vertical" | "horizontal";
+  layoutOnTablet: "vertical" | "horizontal";
+  layoutOnDesktop: "vertical" | "horizontal";
+  alignmentOnMobile:
     | "alignTopLeft"
     | "alignLeft"
     | "alignBottomLeft"
@@ -17,7 +17,7 @@ export interface AutoLayoutStoryblok {
     | "alignTopRight"
     | "alignRight"
     | "alignBottomRight";
-  alignmentOnTablet?:
+  alignmentOnTablet:
     | "alignTopLeft"
     | "alignLeft"
     | "alignBottomLeft"
@@ -27,7 +27,7 @@ export interface AutoLayoutStoryblok {
     | "alignTopRight"
     | "alignRight"
     | "alignBottomRight";
-  alignmentOnDesktop?:
+  alignmentOnDesktop:
     | "alignTopLeft"
     | "alignLeft"
     | "alignBottomLeft"
@@ -37,6 +37,12 @@ export interface AutoLayoutStoryblok {
     | "alignTopRight"
     | "alignRight"
     | "alignBottomRight";
+  verticalResizingOnMobile: "hugContent" | "fillContainer";
+  verticalResizingOnTablet: "hugContent" | "fillContainer";
+  verticalResizingOnDesktop: "hugContent" | "fillContainer";
+  horizontalResizingOnMobile?: "hugContent" | "fillContainer";
+  horizontalResizingOnTablet: "" | "hugContent" | "fillContainer";
+  horizontalResizingOnDesktop: "" | "hugContent" | "fillContainer";
   _uid: string;
   component: "autoLayout";
   [k: string]: any;
@@ -93,6 +99,7 @@ export interface PageStoryblok {
 }
 
 export interface PageSectionStoryblok {
+  title: string;
   columns?: any[];
   styles?: AutoLayoutStoryblok[];
   _uid: string;

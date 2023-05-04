@@ -4,7 +4,9 @@ export interface AutoLayoutStoryblok {
   mobile?: any;
   tablet?: any;
   desktop?: any;
-  layout?: "vertical" | "horizontal";
+  layoutOnMobile?: "vertical" | "horizontal";
+  layoutOnTablet?: "vertical" | "horizontal";
+  layoutOnDesktop?: "vertical" | "horizontal";
   _uid: string;
   component: "autoLayout";
   [k: string]: any;
@@ -12,6 +14,7 @@ export interface AutoLayoutStoryblok {
 
 export interface ColumnStoryblok {
   content?: any;
+  styles?: AutoLayoutStoryblok[];
   _uid: string;
   component: "column";
   [k: string]: any;
@@ -43,15 +46,6 @@ export interface HeaderStoryblok {
   [k: string]: any;
 }
 
-export interface HeroStoryblok {
-  title?: string;
-  description?: string;
-  image?: AssetStoryblok;
-  _uid: string;
-  component: "hero";
-  [k: string]: any;
-}
-
 export interface InternalLinkStoryblok {
   title?: string;
   page: StoryblokStory<PageStoryblok> | string;
@@ -61,7 +55,7 @@ export interface InternalLinkStoryblok {
 }
 
 export interface PageStoryblok {
-  body?: (HeroStoryblok | PageSectionStoryblok)[];
+  body?: PageSectionStoryblok[];
   _uid: string;
   component: "page";
   uuid?: string;
@@ -70,6 +64,7 @@ export interface PageStoryblok {
 
 export interface PageSectionStoryblok {
   columns?: any[];
+  styles?: AutoLayoutStoryblok[];
   _uid: string;
   component: "pageSection";
   [k: string]: any;

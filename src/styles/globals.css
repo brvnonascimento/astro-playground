@@ -209,3 +209,37 @@ footer {
 main[tabindex="-1"] {
   outline: none;
 }
+
+.autoLayout {
+  display: flex;
+
+  &.vertical {
+    flex-direction: column;
+  }
+
+  &.horizontal {
+    flex-direction: row;
+  }
+
+  /* Tablet styles */
+  @media (min-width: 768px) {
+    &.tablet-vertical {
+      flex-direction: column;
+    }
+
+    &.tablet-horizontal {
+      flex-direction: row;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 1024px) {
+    &.desktop-vertical {
+      flex-direction: column;
+    }
+
+    &.desktop-horizontal {
+      flex-direction: row;
+    }
+  }
+}

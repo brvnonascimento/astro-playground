@@ -198,7 +198,7 @@ body > main,
 header,
 footer {
   display: grid;
-  grid-template-columns: 1fr min(95%, 1200px) 1fr;
+  grid-template-columns: 1fr min(95%, 1920px) 1fr;
   container-type: inline-size;
 
   & > * {

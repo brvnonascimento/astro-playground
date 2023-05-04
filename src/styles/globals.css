@@ -222,7 +222,7 @@ main[tabindex="-1"] {
   }
 
   /* Tablet styles */
-  @media (min-width: 768px) {
+  @container (min-width: 768px) {
     &.tablet-vertical {
       flex-direction: column;
     }
@@ -233,7 +233,7 @@ main[tabindex="-1"] {
   }
 
   /* Desktop styles */
-  @media (min-width: 1024px) {
+  @container (min-width: 1024px) {
     &.desktop-vertical {
       flex-direction: column;
     }

@@ -11,17 +11,16 @@ export type Props = {
 
 const { blok } = Astro.props;
 
-const classNames = resolveStylesBlocks(blok?.styles);
+const { classNames } = resolveStylesBlocks(blok?.styles);
 ---
 
 <style>
   .section {
-    display: flex;
-    align-items: center;
     min-height: var(--available-page-height);
+    position: relative;
   }
 </style>
 
-<PageGrid class:list={["section", classNames]} {...storyblokEditable(blok)}>
+<section class:list={["section", classNames]} {...storyblokEditable(blok)}>
   {blok.columns?.map((column) => <StoryblokComponent blok={column} />)}
-</PageGrid>
+</section>

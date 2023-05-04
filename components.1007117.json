@@ -4,7 +4,7 @@
       "name": "autoLayout",
       "display_name": "Auto Layout",
       "created_at": "2023-05-03T02:42:47.821Z",
-      "updated_at": "2023-05-04T16:21:21.047Z",
+      "updated_at": "2023-05-04T18:54:24.777Z",
       "id": 74277,
       "schema": {
         "mobile": {
@@ -89,6 +89,165 @@
           ],
           "default_value": "vertical",
           "exclude_empty_option": true
+        },
+        "alignmentOnMobile": {
+          "type": "option",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "options": [
+            {
+              "_uid": "db000ac6-3097-458a-9910-f4b7a4704532",
+              "name": "Align Top Left",
+              "value": "alignTopLeft"
+            },
+            {
+              "_uid": "ee0c233b-bfae-43f1-94cf-258f8824922f",
+              "value": "alignLeft",
+              "name": "Align Left"
+            },
+            {
+              "_uid": "6fb4b287-5605-4deb-b32c-5b570995f0de",
+              "value": "alignBottomLeft",
+              "name": "Align Bottom Left"
+            },
+            {
+              "_uid": "a0a3213e-9f10-484a-be3b-ba793e1f8f78",
+              "value": "alignTopCenter",
+              "name": "Align Top Center"
+            },
+            {
+              "_uid": "8478e8fb-6053-41e4-96a0-9772442c59c1",
+              "value": "alignCenter",
+              "name": "Align Center"
+            },
+            {
+              "_uid": "e5daa039-b7f6-49e1-a2e9-82ef37ca1de1",
+              "value": "alignBottomCenter",
+              "name": "Align Bottom Center"
+            },
+            {
+              "_uid": "ffcf9c95-3cb0-4eff-b452-3eb3a80b73aa",
+              "value": "alignTopRight",
+              "name": "Align Top Right"
+            },
+            {
+              "_uid": "066f788d-946f-4635-b09a-b7264ead3ffb",
+              "value": "alignRight",
+              "name": "Align Right"
+            },
+            {
+              "_uid": "3cee4f46-713a-400e-9a7e-47eb5869e9d5",
+              "value": "alignBottomRight",
+              "name": "Align Bottom Right"
+            }
+          ],
+          "default_value": "alignTopLeft"
+        },
+        "alignmentOnTablet": {
+          "type": "option",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "options": [
+            {
+              "_uid": "25a6ccac-91a2-44fd-a7a2-0d382bda1320",
+              "name": "Align Top Left",
+              "value": "alignTopLeft"
+            },
+            {
+              "_uid": "65405bc7-8dc2-4953-8e32-5392ae31a16b",
+              "value": "alignLeft",
+              "name": "Align Left"
+            },
+            {
+              "_uid": "8dfff10c-0171-46f0-8018-5876373acb5b",
+              "value": "alignBottomLeft",
+              "name": "Align Bottom Left"
+            },
+            {
+              "_uid": "3da1da00-4188-4ac8-9ea4-af93f77fd90f",
+              "value": "alignTopCenter",
+              "name": "Align Top Center"
+            },
+            {
+              "_uid": "59cc19eb-6004-4ccd-8a97-f372b4f90253",
+              "value": "alignCenter",
+              "name": "Align Center"
+            },
+            {
+              "_uid": "6a6aa16c-6874-4827-a0cb-4f55e2656643",
+              "value": "alignBottomCenter",
+              "name": "Align Bottom Center"
+            },
+            {
+              "_uid": "84a4e132-f0ef-4863-a55d-c21a5c752e5b",
+              "value": "alignTopRight",
+              "name": "Align Top Right"
+            },
+            {
+              "_uid": "9b239b59-0c9a-4824-a3c6-cb454db10562",
+              "value": "alignRight",
+              "name": "Align Right"
+            },
+            {
+              "_uid": "36df40c8-eada-4ea2-91e3-898ba1bf7f76",
+              "value": "alignBottomRight",
+              "name": "Align Bottom Right"
+            }
+          ],
+          "default_value": "alignTopLeft"
+        },
+        "alignmentOnDesktop": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "7f290767-1cbf-4d80-8c9b-9553ba4ec3a8",
+              "name": "Align Top Left",
+              "value": "alignTopLeft"
+            },
+            {
+              "_uid": "6e5670a4-4acd-4a23-9aa7-d453f2013c84",
+              "value": "alignLeft",
+              "name": "Align Left"
+            },
+            {
+              "_uid": "ae56ee6f-a54d-4b3c-9abb-819c0afb2000",
+              "value": "alignBottomLeft",
+              "name": "Align Bottom Left"
+            },
+            {
+              "_uid": "da8da55c-7824-4690-a1da-e6e65216335b",
+              "value": "alignTopCenter",
+              "name": "Align Top Center"
+            },
+            {
+              "_uid": "18bbf479-f84a-4b52-881c-4edf6b4eb180",
+              "value": "alignCenter",
+              "name": "Align Center"
+            },
+            {
+              "_uid": "a29293cb-6c95-4a6f-9905-db7d033f35df",
+              "value": "alignBottomCenter",
+              "name": "Align Bottom Center"
+            },
+            {
+              "_uid": "b68b20ee-de1d-49ec-848f-ed049acabe04",
+              "value": "alignTopRight",
+              "name": "Align Top Right"
+            },
+            {
+              "_uid": "966dc694-6988-4ddf-bac7-77ce3b3697be",
+              "value": "alignRight",
+              "name": "Align Right"
+            },
+            {
+              "_uid": "257bc023-c31d-49db-8e67-8eff247ff48f",
+              "value": "alignBottomRight",
+              "name": "Align Bottom Right"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "alignTopLeft"
         }
       },
       "image": null,

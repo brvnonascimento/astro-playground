@@ -4,7 +4,7 @@ export const resolveStylesBlocks = (styles?: AutoLayoutStoryblok[]) => {
   let classNames = "";
 
   if (!styles) {
-    return classNames;
+    return { classNames };
   }
 
   styles.forEach((style) => {
@@ -17,5 +17,5 @@ export const resolveStylesBlocks = (styles?: AutoLayoutStoryblok[]) => {
     classNames += `desktop-${layoutOnDesktop} `;
   });
 
-  return classNames.trim();
+  return { classNames: classNames.trim() };
 };

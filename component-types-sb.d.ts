@@ -7,6 +7,36 @@ export interface AutoLayoutStoryblok {
   layoutOnMobile?: "vertical" | "horizontal";
   layoutOnTablet?: "vertical" | "horizontal";
   layoutOnDesktop?: "vertical" | "horizontal";
+  alignmentOnMobile?:
+    | "alignTopLeft"
+    | "alignLeft"
+    | "alignBottomLeft"
+    | "alignTopCenter"
+    | "alignCenter"
+    | "alignBottomCenter"
+    | "alignTopRight"
+    | "alignRight"
+    | "alignBottomRight";
+  alignmentOnTablet?:
+    | "alignTopLeft"
+    | "alignLeft"
+    | "alignBottomLeft"
+    | "alignTopCenter"
+    | "alignCenter"
+    | "alignBottomCenter"
+    | "alignTopRight"
+    | "alignRight"
+    | "alignBottomRight";
+  alignmentOnDesktop?:
+    | "alignTopLeft"
+    | "alignLeft"
+    | "alignBottomLeft"
+    | "alignTopCenter"
+    | "alignCenter"
+    | "alignBottomCenter"
+    | "alignTopRight"
+    | "alignRight"
+    | "alignBottomRight";
   _uid: string;
   component: "autoLayout";
   [k: string]: any;

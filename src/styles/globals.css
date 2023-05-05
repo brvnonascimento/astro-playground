@@ -281,13 +281,13 @@ main[tabindex="-1"] {
     }
 
     &.alignLeft {
-      align-items: flex-start;
-      justify-content: center;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     &.alignBottomLeft {
-      align-items: flex-start;
-      justify-content: flex-end;
+      align-items: flex-end;
+      justify-content: flex-start;
     }
     /*  */
 
@@ -414,13 +414,13 @@ main[tabindex="-1"] {
       }
 
       &.tablet-alignLeft {
-        align-items: flex-start;
-        justify-content: center;
+        align-items: center;
+        justify-content: flex-start;
       }
 
       &.tablet-alignBottomLeft {
-        align-items: flex-start;
-        justify-content: flex-end;
+        align-items: flex-end;
+        justify-content: flex-start;
       }
       /*  */
 
@@ -549,13 +549,13 @@ main[tabindex="-1"] {
       }
 
       &.desktop-alignLeft {
-        align-items: flex-start;
-        justify-content: center;
+        align-items: center;
+        justify-content: flex-start;
       }
 
       &.desktop-alignBottomLeft {
-        align-items: flex-start;
-        justify-content: flex-end;
+        align-items: flex-end;
+        justify-content: flex-start;
       }
       /*  */
 

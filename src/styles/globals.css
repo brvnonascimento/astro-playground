@@ -246,8 +246,8 @@ main[tabindex="-1"] {
     }
 
     &.alignBottomCenter {
-      justify-content: center;
-      align-items: flex-end;
+      justify-content: flex-end;
+      align-items: center;
     }
     /*  */
 
@@ -379,8 +379,8 @@ main[tabindex="-1"] {
       }
 
       &.tablet-alignBottomCenter {
-        justify-content: center;
-        align-items: flex-end;
+        justify-content: flex-end;
+        align-items: center;
       }
       /*  */
 
@@ -514,8 +514,8 @@ main[tabindex="-1"] {
       }
 
       &.desktop-alignBottomCenter {
-        justify-content: center;
-        align-items: flex-end;
+        justify-content: flex-end;
+        align-items: center;
       }
       /*  */
 

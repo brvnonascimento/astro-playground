@@ -258,8 +258,8 @@ main[tabindex="-1"] {
     }
 
     &.alignRight {
-      justify-content: flex-end;
-      align-items: center;
+      justify-content: center;
+      align-items: flex-end;
     }
 
     &.alignBottomRight {
@@ -391,8 +391,8 @@ main[tabindex="-1"] {
       }
 
       &.tablet-alignRight {
-        justify-content: flex-end;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-end;
       }
 
       &.tablet-alignBottomRight {
@@ -526,8 +526,8 @@ main[tabindex="-1"] {
       }
 
       &.desktop-alignRight {
-        justify-content: flex-end;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-end;
       }
 
       &.desktop-alignBottomRight {

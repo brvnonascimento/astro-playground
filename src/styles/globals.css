@@ -497,8 +497,8 @@ main[tabindex="-1"] {
       }
 
       &.desktop-alignBottomLeft {
-        justify-content: flex-start;
-        align-items: flex-end;
+        justify-content: flex-end;
+        align-items: flex-start;
       }
       /*  */
 

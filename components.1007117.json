@@ -579,7 +579,7 @@
       "name": "pageSection",
       "display_name": "Page Section",
       "created_at": "2023-05-02T22:51:54.083Z",
-      "updated_at": "2023-05-04T23:21:59.432Z",
+      "updated_at": "2023-05-04T23:58:11.161Z",
       "id": 74231,
       "schema": {
         "title": {
@@ -590,7 +590,12 @@
         "columns": {
           "type": "bloks",
           "key": "Columns",
-          "pos": 1
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "column"
+          ]
         },
         "styles": {
           "type": "bloks",
@@ -623,7 +628,7 @@
       "name": "wrapper",
       "display_name": null,
       "created_at": "2023-05-04T22:55:24.694Z",
-      "updated_at": "2023-05-04T23:24:21.569Z",
+      "updated_at": "2023-05-04T23:59:28.131Z",
       "id": 75121,
       "schema": {
         "backgroundColor": {
@@ -660,14 +665,16 @@
           "description": "Defines rather the Page Section will span across the entire width of the screen or get containerized at the center.",
           "tooltip": true,
           "inline_label": false,
-          "display_name": "Should Containerize?"
+          "display_name": "Should Containerize?",
+          "required": false
         },
         "shouldContainerizeOnTablet": {
           "type": "boolean",
           "pos": 5,
           "default_value": true,
           "description": "Defines rather the Page Section will span across the entire width of the screen or get containerized at the center.",
-          "display_name": "Should Containerize?"
+          "display_name": "Should Containerize?",
+          "required": false
         },
         "shouldContainerizeOnDesktop": {
           "type": "boolean",
@@ -675,7 +682,8 @@
           "description": "Defines rather the Page Section will span across the entire width of the screen or get containerized at the center.",
           "default_value": true,
           "tooltip": true,
-          "display_name": "Should Containerize?"
+          "display_name": "Should Containerize?",
+          "required": false
         }
       },
       "image": null,

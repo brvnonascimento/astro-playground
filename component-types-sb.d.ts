@@ -100,7 +100,7 @@ export interface PageStoryblok {
 
 export interface PageSectionStoryblok {
   title: string;
-  columns?: any[];
+  columns?: ColumnStoryblok[];
   styles?: (AutoLayoutStoryblok | WrapperStoryblok)[];
   _uid: string;
   component: "pageSection";

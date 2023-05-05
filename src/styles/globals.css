@@ -253,8 +253,8 @@ main[tabindex="-1"] {
 
     /* Align Right */
     &.alignTopRight {
-      justify-content: flex-end;
-      align-items: flex-start;
+      justify-content: flex-start;
+      align-items: flex-end;
     }
 
     &.alignRight {
@@ -386,8 +386,8 @@ main[tabindex="-1"] {
 
       /* Align Right */
       &.tablet-alignTopRight {
-        justify-content: flex-end;
-        align-items: flex-start;
+        justify-content: flex-start;
+        align-items: flex-end;
       }
 
       &.tablet-alignRight {
@@ -521,8 +521,8 @@ main[tabindex="-1"] {
 
       /* Align Right */
       &.desktop-alignTopRight {
-        justify-content: flex-end;
-        align-items: flex-start;
+        justify-content: flex-start;
+        align-items: flex-end;
       }
 
       &.desktop-alignRight {

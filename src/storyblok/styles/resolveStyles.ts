@@ -1,17 +1,16 @@
 import { ColumnStoryblok, PageSectionStoryblok } from "@types";
+import cn from "classnames";
 
 export const resolvePageSectionStylesBlocks = (
   styles?: PageSectionStoryblok["styles"]
 ) => {
-  let classNames = "";
-  let wrapperClassNames = "";
+  const classNames: string[] = [];
 
-  let cssVariables = new Map();
+  const cssVariables = new Map();
 
   if (!styles) {
     return {
-      classNames,
-      wrapperClassNames,
+      classNames: "",
       cssVariables: Object.fromEntries(cssVariables),
     };
   }
@@ -33,17 +32,17 @@ export const resolvePageSectionStylesBlocks = (
         numberOfColumnsOnDesktop,
       } = style;
 
-      classNames += `pageSectionGrid `;
+      classNames.push(`pageSectionGrid`);
 
       // Layout
-      if (layoutOnMobile) classNames += `${layoutOnMobile} `;
-      if (layoutOnTablet) classNames += `tablet-${layoutOnTablet} `;
-      if (layoutOnDesktop) classNames += `desktop-${layoutOnDesktop} `;
+      if (layoutOnMobile) classNames.push(`${layoutOnMobile}`);
+      if (layoutOnTablet) classNames.push(`tablet-${layoutOnTablet}`);
+      if (layoutOnDesktop) classNames.push(`desktop-${layoutOnDesktop}`);
 
       // Alignment
-      if (alignmentOnMobile) classNames += `${alignmentOnMobile} `;
-      if (alignmentOnTablet) classNames += `tablet-${alignmentOnTablet} `;
-      if (alignmentOnDesktop) classNames += `desktop-${alignmentOnDesktop} `;
+      if (alignmentOnMobile) classNames.push(`${alignmentOnMobile}`);
+      if (alignmentOnTablet) classNames.push(`tablet-${alignmentOnTablet}`);
+      if (alignmentOnDesktop) classNames.push(`desktop-${alignmentOnDesktop}`);
 
       // Number of Columns
       if (numberOfColumnsOnMobile)
@@ -58,8 +57,7 @@ export const resolvePageSectionStylesBlocks = (
   });
 
   return {
-    classNames: classNames.trim(),
-    wrapperClassNames,
+    classNames: cn(classNames),
     cssVariables: Object.fromEntries(cssVariables),
   };
 };
@@ -67,8 +65,8 @@ export const resolvePageSectionStylesBlocks = (
 export const resolveColumnStylesBlocks = (
   styles?: ColumnStoryblok["styles"]
 ) => {
-  let classNames = "";
-  let wrapperClassNames = "";
+  const classNames: string[] = [];
+  const wrapperClassNames = "";
 
   if (!styles) {
     return { classNames, wrapperClassNames };
@@ -94,33 +92,39 @@ export const resolveColumnStylesBlocks = (
         verticalResizingOnDesktop,
       } = style;
 
-      classNames += `autoLayout `;
+      classNames.push("autoLayout");
 
       // Layout
-      if (layoutOnMobile) classNames += `${layoutOnMobile} `;
-      if (layoutOnTablet) classNames += `tablet-${layoutOnTablet} `;
-      if (layoutOnDesktop) classNames += `desktop-${layoutOnDesktop} `;
+      if (layoutOnMobile) classNames.push(layoutOnMobile);
+      if (layoutOnTablet) classNames.push(`tablet-${layoutOnTablet}`);
+      if (layoutOnDesktop) classNames.push(`desktop-${layoutOnDesktop}`);
 
       // Alignment
-      if (alignmentOnMobile) classNames += `${alignmentOnMobile} `;
-      if (alignmentOnTablet) classNames += `tablet-${alignmentOnTablet} `;
-      if (alignmentOnDesktop) classNames += `desktop-${alignmentOnDesktop} `;
+      if (alignmentOnMobile) classNames.push(alignmentOnMobile);
+      if (alignmentOnTablet) classNames.push(`tablet-${alignmentOnTablet}`);
+      if (alignmentOnDesktop) classNames.push(`desktop-${alignmentOnDesktop}`);
 
       // Horizontal Resizing
       if (horizontalResizingOnMobile)
-        classNames += `horizontalResizing-${horizontalResizingOnMobile} `;
+        classNames.push(`horizontalResizing-${horizontalResizingOnMobile}`);
       if (horizontalResizingOnTablet)
-        classNames += `tablet-horizontalResizing-${horizontalResizingOnTablet} `;
+        classNames.push(
+          `tablet-horizontalResizing-${horizontalResizingOnTablet}`
+        );
       if (horizontalResizingOnDesktop)
-        classNames += `desktop-horizontalResizing-${horizontalResizingOnDesktop} `;
+        classNames.push(
+          `desktop-horizontalResizing-${horizontalResizingOnDesktop}`
+        );
 
       // Vertical Resizing
       if (verticalResizingOnMobile)
-        classNames += `verticalResizing-${verticalResizingOnMobile} `;
+        classNames.push(`verticalResizing-${verticalResizingOnMobile}`);
       if (verticalResizingOnTablet)
-        classNames += `tablet-verticalResizing-${verticalResizingOnTablet} `;
+        classNames.push(`tablet-verticalResizing-${verticalResizingOnTablet}`);
       if (verticalResizingOnDesktop)
-        classNames += `desktop-verticalResizing-${verticalResizingOnDesktop} `;
+        classNames.push(
+          `desktop-verticalResizing-${verticalResizingOnDesktop}`
+        );
     }
 
     if (component === "columnStyles") {
@@ -131,15 +135,15 @@ export const resolveColumnStylesBlocks = (
       } = style;
 
       if (shouldContainerizeOnMobile === false)
-        classNames += `escapeContainer `;
+        classNames.push("escapeContainer");
 
       if (shouldContainerizeOnTablet === false)
-        classNames += `tablet-escapeContainer `;
+        classNames.push("tablet-escapeContainer");
 
       if (shouldContainerizeOnDesktop === false)
-        classNames += `desktop-escapeContainer `;
+        classNames.push("desktop-escapeContainer");
     }
   });
 
-  return { classNames: classNames.trim(), wrapperClassNames };
+  return { classNames: cn(classNames), wrapperClassNames };
 };

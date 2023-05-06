@@ -406,7 +406,7 @@
       "name": "column",
       "display_name": null,
       "created_at": "2023-05-03T00:30:40.131Z",
-      "updated_at": "2023-05-05T14:36:20.235Z",
+      "updated_at": "2023-05-06T21:36:52.624Z",
       "id": 74242,
       "schema": {
         "content": {
@@ -419,7 +419,8 @@
           "restrict_components": true,
           "component_whitelist": [
             "autoLayout",
-            "columnStyles"
+            "columnStyles",
+            "textStyles"
           ],
           "component_group_whitelist": []
         }
@@ -710,7 +711,7 @@
       "name": "pageSection",
       "display_name": "Page Section",
       "created_at": "2023-05-02T22:51:54.083Z",
-      "updated_at": "2023-05-06T16:03:51.335Z",
+      "updated_at": "2023-05-06T21:36:52.606Z",
       "id": 74231,
       "schema": {
         "title": {
@@ -735,7 +736,8 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "pageSectionGrid"
+            "pageSectionGrid",
+            "textStyles"
           ],
           "component_group_whitelist": [],
           "default_value": "fillContainer"
@@ -1053,6 +1055,117 @@
       "component_group_uuid": "051724a1-f338-4385-bc93-ba373664ccc7",
       "color": "#00b3b0",
       "icon": "block-mobile",
+      "component_group_name": "Styles"
+    },
+    {
+      "name": "textStyles",
+      "display_name": null,
+      "created_at": "2023-05-06T21:29:34.416Z",
+      "updated_at": "2023-05-06T21:36:52.579Z",
+      "id": 75624,
+      "schema": {
+        "mobile": {
+          "type": "section",
+          "keys": [
+            "textAlignOnMobile"
+          ]
+        },
+        "tablet": {
+          "type": "section",
+          "keys": [
+            "textAlignOnTablet"
+          ]
+        },
+        "desktop": {
+          "type": "section",
+          "keys": [
+            "textAlignOnDesktop"
+          ]
+        },
+        "textAlignOnMobile": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "0fcecc3c-93a1-40c9-a8c3-c8884479f391",
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "_uid": "43a04fed-9622-4243-88ca-6c2a0dd78f89",
+              "value": "center",
+              "name": "Center"
+            },
+            {
+              "_uid": "bbad4abf-7000-4816-8996-a0779f81f0dd",
+              "value": "right",
+              "name": "Right"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "left",
+          "required": true
+        },
+        "textAlignOnTablet": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "7443c47b-1058-4319-a299-4ce0920a91e3",
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "_uid": "c68d27e2-3f36-4821-bc63-c541dd844a42",
+              "value": "center",
+              "name": "Center"
+            },
+            {
+              "_uid": "fe04b666-24e5-4dce-93f5-0f711ec65c4a",
+              "value": "right",
+              "name": "Right"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "left",
+          "required": true
+        },
+        "textAlignOnDesktop": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "2ed220cc-3a09-4170-bc79-b3452b8a3967",
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "_uid": "0a468546-8363-43c0-a8bb-dd1b30c232d1",
+              "value": "center",
+              "name": "Center"
+            },
+            {
+              "_uid": "c4e92f76-c3e7-46e8-8622-1fcaa55fc445",
+              "value": "right",
+              "name": "Right"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "left",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "textStyles",
+      "component_group_uuid": "051724a1-f338-4385-bc93-ba373664ccc7",
+      "color": "#00b3b0",
+      "icon": "block-text-c",
       "component_group_name": "Styles"
     }
   ]

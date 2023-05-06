@@ -50,7 +50,7 @@ export interface AutoLayoutStoryblok {
 
 export interface ColumnStoryblok {
   content?: any;
-  styles?: (AutoLayoutStoryblok | ColumnStylesStoryblok)[];
+  styles?: (AutoLayoutStoryblok | ColumnStylesStoryblok | TextStylesStoryblok)[];
   _uid: string;
   component: "column";
   [k: string]: any;
@@ -127,7 +127,7 @@ export interface PageStoryblok {
 export interface PageSectionStoryblok {
   title: string;
   columns?: ColumnStoryblok[];
-  styles?: PageSectionGridStoryblok[];
+  styles?: (PageSectionGridStoryblok | TextStylesStoryblok)[];
   _uid: string;
   component: "pageSection";
   [k: string]: any;
@@ -172,5 +172,17 @@ export interface PageSectionGridStoryblok {
     | "alignBottomRight";
   _uid: string;
   component: "pageSectionGrid";
+  [k: string]: any;
+}
+
+export interface TextStylesStoryblok {
+  mobile?: any;
+  tablet?: any;
+  desktop?: any;
+  textAlignOnMobile: "left" | "center" | "right";
+  textAlignOnTablet: "left" | "center" | "right";
+  textAlignOnDesktop: "left" | "center" | "right";
+  _uid: string;
+  component: "textStyles";
   [k: string]: any;
 }

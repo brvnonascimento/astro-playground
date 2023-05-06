@@ -623,3 +623,8 @@ main[tabindex="-1"] {
     /*  */
   }
 }
+
+.cta {
+  background: var(--color-primary);
+  padding: 1rem 2rem;
+}

@@ -68,6 +68,20 @@ export interface ColumnStylesStoryblok {
   [k: string]: any;
 }
 
+export interface CtaButtonStoryblok {
+  link?: (ExternalLinkStoryblok | InternalLinkStoryblok)[];
+  _uid: string;
+  component: "ctaButton";
+  [k: string]: any;
+}
+
+export interface ExternalLinkStoryblok {
+  title?: string;
+  _uid: string;
+  component: "externalLink";
+  [k: string]: any;
+}
+
 export interface FooterStoryblok {
   navLinks?: InternalLinkStoryblok[];
   _uid: string;
@@ -158,17 +172,5 @@ export interface PageSectionGridStoryblok {
     | "alignBottomRight";
   _uid: string;
   component: "pageSectionGrid";
-  [k: string]: any;
-}
-
-export interface WrapperStoryblok {
-  mobile?: any;
-  tablet?: any;
-  desktop?: any;
-  shouldContainerizeOnMobile?: boolean;
-  shouldContainerizeOnTablet?: boolean;
-  shouldContainerizeOnDesktop?: boolean;
-  _uid: string;
-  component: "wrapper";
   [k: string]: any;
 }

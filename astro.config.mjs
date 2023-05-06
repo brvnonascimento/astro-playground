@@ -33,7 +33,6 @@ export default defineConfig({
         header: "storyblok/layout/header",
         footer: "storyblok/layout/footer",
         // Blocks
-        hero: "storyblok/hero",
         pageSection: "storyblok/pageSection",
         column: "storyblok/column",
       },

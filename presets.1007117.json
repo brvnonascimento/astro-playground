@@ -1,0 +1,164 @@
+{
+  "presets": [
+    {
+      "id": 525,
+      "name": "Hero",
+      "preset": {
+        "_uid": "fd030bd8-affd-4a1a-811f-6ec0d9972f3b",
+        "title": "Hero",
+        "styles": [
+          {
+            "_uid": "46c10f9d-349b-4c39-b689-d2ca781568c4",
+            "component": "pageSectionGrid",
+            "alignmentOnMobile": "alignTopLeft",
+            "alignmentOnTablet": "alignTopLeft",
+            "alignmentOnDesktop": "alignCenter",
+            "numberOfColumnsOnMobile": "1",
+            "numberOfColumnsOnTablet": "1",
+            "numberOfColumnsOnDesktop": "2",
+            "verticalResizingOnMobile": "hugContent",
+            "verticalResizingOnTablet": "hugContent",
+            "verticalResizingOnDesktop": "hugContent",
+            "horizontalResizingOnMobile": "hugContent",
+            "horizontalResizingOnTablet": "hugContent",
+            "horizontalResizingOnDesktop": "hugContent"
+          }
+        ],
+        "columns": [
+          {
+            "_uid": "b7137cb5-dc04-4f82-94a1-d8961c11e7ec",
+            "styles": [
+              {
+                "_uid": "c4604723-b8bc-48d5-aebd-f19445a52938",
+                "component": "autoLayout",
+                "layoutOnMobile": "vertical",
+                "layoutOnTablet": "vertical",
+                "layoutOnDesktop": "vertical",
+                "alignmentOnMobile": "alignTopLeft",
+                "alignmentOnTablet": "alignTopLeft",
+                "alignmentOnDesktop": "alignCenter",
+                "verticalResizingOnMobile": "hugContent",
+                "verticalResizingOnTablet": "hugContent",
+                "verticalResizingOnDesktop": "hugContent",
+                "horizontalResizingOnMobile": "hugContent",
+                "horizontalResizingOnTablet": "hugContent",
+                "horizontalResizingOnDesktop": "fillContainer"
+              }
+            ],
+            "content": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "heading",
+                  "attrs": {
+                    "level": 1
+                  },
+                  "content": [
+                    {
+                      "text": "The quick brown ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "fox",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "underline"
+                        }
+                      ]
+                    },
+                    {
+                      "text": " jumps over the lazy ",
+                      "type": "text"
+                    },
+                    {
+                      "text": "dog",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "underline"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "attrs": {
+                    "level": 2
+                  }
+                }
+              ]
+            },
+            "component": "column"
+          },
+          {
+            "_uid": "0e20b25d-8cb1-4835-94a5-6dfe612d941c",
+            "styles": [
+              {
+                "_uid": "960efdd1-ef3d-43c0-a5c6-d47cc16da50d",
+                "component": "autoLayout",
+                "layoutOnMobile": "vertical",
+                "layoutOnTablet": "vertical",
+                "layoutOnDesktop": "vertical",
+                "alignmentOnMobile": "alignTopLeft",
+                "alignmentOnTablet": "alignTopLeft",
+                "alignmentOnDesktop": "alignTopLeft",
+                "verticalResizingOnMobile": "hugContent",
+                "verticalResizingOnTablet": "hugContent",
+                "verticalResizingOnDesktop": "fillContainer",
+                "horizontalResizingOnMobile": "hugContent",
+                "horizontalResizingOnTablet": "hugContent",
+                "horizontalResizingOnDesktop": "fillContainer"
+              },
+              {
+                "_uid": "448978d0-8503-4532-9aaf-543d263fabbf",
+                "component": "columnStyles",
+                "backgroundColor": {
+                  "_uid": "5a8ab1c4-3938-424d-b877-632928c314ae",
+                  "color": "",
+                  "plugin": "official-colorpicker"
+                },
+                "shouldContainerizeOnMobile": true,
+                "shouldContainerizeOnTablet": false,
+                "shouldContainerizeOnDesktop": false
+              }
+            ],
+            "content": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "heading",
+                  "attrs": {
+                    "level": 3
+                  },
+                  "content": [
+                    {
+                      "type": "image",
+                      "attrs": {
+                        "alt": "",
+                        "src": "https://a-us.storyblok.com/f/1007117/640x734/b5c685c5bd/vk85so8ntwo51.webp",
+                        "title": "",
+                        "copyright": ""
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "component": "column"
+          }
+        ],
+        "component": "pageSection"
+      },
+      "component_id": 74231,
+      "space_id": 1007117,
+      "created_at": "2023-05-06T20:16:48.354Z",
+      "updated_at": "2023-05-06T20:16:48.354Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    }
+  ]
+}

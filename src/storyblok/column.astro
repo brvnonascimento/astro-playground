@@ -1,6 +1,8 @@
 ---
 import { renderRichText } from "@storyblok/astro";
 import { ColumnStoryblok } from "@types";
+
+import { CTAButton } from "storyblok/atoms/CTAButton";
 import { resolveColumnStylesBlocks } from "storyblok/styles/resolveStyles";
 
 const { blok } = Astro.props;
@@ -20,7 +22,18 @@ const removeEmptyTags = (htmlString: string): string => {
 };
 
 const renderedRichText = removeEmptyTags(
-  extractImgTag(renderRichText(blok.content))
+  extractImgTag(
+    renderRichText(blok.content, {
+      resolver: (component, blok) => {
+        switch (component) {
+          case "ctaButton":
+            return CTAButton(blok);
+          default:
+            return null;
+        }
+      },
+    })
+  )
 );
 
 const { classNames } = resolveColumnStylesBlocks(blok?.styles);

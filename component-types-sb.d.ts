@@ -50,9 +50,21 @@ export interface AutoLayoutStoryblok {
 
 export interface ColumnStoryblok {
   content?: any;
-  styles?: AutoLayoutStoryblok[];
+  styles?: (AutoLayoutStoryblok | ColumnStylesStoryblok)[];
   _uid: string;
   component: "column";
+  [k: string]: any;
+}
+
+export interface ColumnStylesStoryblok {
+  mobile?: any;
+  tablet?: any;
+  desktop?: any;
+  shouldContainerizeOnMobile?: boolean;
+  shouldContainerizeOnTablet?: boolean;
+  shouldContainerizeOnDesktop?: boolean;
+  _uid: string;
+  component: "columnStyles";
   [k: string]: any;
 }
 
@@ -101,9 +113,51 @@ export interface PageStoryblok {
 export interface PageSectionStoryblok {
   title: string;
   columns?: ColumnStoryblok[];
-  styles?: (AutoLayoutStoryblok | WrapperStoryblok)[];
+  styles?: PageSectionGridStoryblok[];
   _uid: string;
   component: "pageSection";
+  [k: string]: any;
+}
+
+export interface PageSectionGridStoryblok {
+  mobile?: any;
+  tablet?: any;
+  desktop?: any;
+  numberOfColumnsOnMobile: number;
+  numberOfColumnsOnTablet: number;
+  numberOfColumnsOnDesktop: number;
+  alignmentOnMobile:
+    | "alignTopLeft"
+    | "alignLeft"
+    | "alignBottomLeft"
+    | "alignTopCenter"
+    | "alignCenter"
+    | "alignBottomCenter"
+    | "alignTopRight"
+    | "alignRight"
+    | "alignBottomRight";
+  alignmentOnTablet:
+    | "alignTopLeft"
+    | "alignLeft"
+    | "alignBottomLeft"
+    | "alignTopCenter"
+    | "alignCenter"
+    | "alignBottomCenter"
+    | "alignTopRight"
+    | "alignRight"
+    | "alignBottomRight";
+  alignmentOnDesktop:
+    | "alignTopLeft"
+    | "alignLeft"
+    | "alignBottomLeft"
+    | "alignTopCenter"
+    | "alignCenter"
+    | "alignBottomCenter"
+    | "alignTopRight"
+    | "alignRight"
+    | "alignBottomRight";
+  _uid: string;
+  component: "pageSectionGrid";
   [k: string]: any;
 }
 

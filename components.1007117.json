@@ -406,7 +406,7 @@
       "name": "column",
       "display_name": null,
       "created_at": "2023-05-03T00:30:40.131Z",
-      "updated_at": "2023-05-04T22:54:01.187Z",
+      "updated_at": "2023-05-05T14:36:20.235Z",
       "id": 74242,
       "schema": {
         "content": {
@@ -418,7 +418,8 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "autoLayout"
+            "autoLayout",
+            "columnStyles"
           ],
           "component_group_whitelist": []
         }
@@ -435,6 +436,81 @@
       "color": "#395ece",
       "icon": "block-text-l",
       "component_group_name": "Atoms"
+    },
+    {
+      "name": "columnStyles",
+      "display_name": "Column Styles",
+      "created_at": "2023-05-05T14:35:05.141Z",
+      "updated_at": "2023-05-05T14:35:40.707Z",
+      "id": 75310,
+      "schema": {
+        "backgroundColor": {
+          "type": "custom",
+          "field_type": "storyblok-colorpicker",
+          "options": [],
+          "pos": 0
+        },
+        "mobile": {
+          "type": "section",
+          "pos": 1,
+          "keys": [
+            "shouldContainerizeOnMobile"
+          ]
+        },
+        "tablet": {
+          "type": "section",
+          "pos": 2,
+          "keys": [
+            "shouldContainerizeOnTablet"
+          ]
+        },
+        "desktop": {
+          "type": "section",
+          "pos": 3,
+          "keys": [
+            "shouldContainerizeOnDesktop"
+          ]
+        },
+        "shouldContainerizeOnMobile": {
+          "type": "boolean",
+          "pos": 4,
+          "default_value": true,
+          "description": "Defines rather the Page Section will span across the entire width of the screen or get containerized at the center.",
+          "tooltip": true,
+          "inline_label": false,
+          "display_name": "Should Containerize?",
+          "required": false
+        },
+        "shouldContainerizeOnTablet": {
+          "type": "boolean",
+          "pos": 5,
+          "default_value": true,
+          "description": "Defines rather the Page Section will span across the entire width of the screen or get containerized at the center.",
+          "display_name": "Should Containerize?",
+          "required": false
+        },
+        "shouldContainerizeOnDesktop": {
+          "type": "boolean",
+          "pos": 6,
+          "description": "Defines rather the Page Section will span across the entire width of the screen or get containerized at the center.",
+          "default_value": true,
+          "tooltip": true,
+          "display_name": "Should Containerize?",
+          "required": false
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Column Styles",
+      "component_group_uuid": "051724a1-f338-4385-bc93-ba373664ccc7",
+      "color": "#00b3b0",
+      "icon": "block-table",
+      "component_group_name": "Styles"
     },
     {
       "name": "footer",
@@ -579,7 +655,7 @@
       "name": "pageSection",
       "display_name": "Page Section",
       "created_at": "2023-05-02T22:51:54.083Z",
-      "updated_at": "2023-05-04T23:58:11.161Z",
+      "updated_at": "2023-05-06T16:03:51.335Z",
       "id": 74231,
       "schema": {
         "title": {
@@ -604,8 +680,7 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "autoLayout",
-            "wrapper"
+            "pageSectionGrid"
           ],
           "component_group_whitelist": [],
           "default_value": "fillContainer"
@@ -623,6 +698,297 @@
       "color": "#ffac00",
       "icon": "block-text-img-c",
       "component_group_name": "Page Blocks"
+    },
+    {
+      "name": "pageSectionGrid",
+      "display_name": "Page Section Grid",
+      "created_at": "2023-05-05T21:26:34.313Z",
+      "updated_at": "2023-05-06T16:13:37.171Z",
+      "id": 75538,
+      "schema": {
+        "mobile": {
+          "type": "section",
+          "keys": [
+            "layout",
+            "layoutOnMobile",
+            "alignmentOnMobile",
+            "numberOfColumnsOnMobile"
+          ],
+          "key": "mobile",
+          "pos": 0
+        },
+        "tablet": {
+          "type": "section",
+          "keys": [
+            "layout",
+            "layoutOnTablet",
+            "alignmentOnTablet",
+            "numberOfColumnsOnTablet"
+          ],
+          "key": "tablet",
+          "pos": 1
+        },
+        "desktop": {
+          "type": "section",
+          "keys": [
+            "layout",
+            "layoutOnDesktop",
+            "alignmentOnDesktop",
+            "numberOfColumnsOnDesktop"
+          ],
+          "key": "desktop",
+          "pos": 2
+        },
+        "numberOfColumnsOnMobile": {
+          "type": "number",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "9fb39823-2722-44ed-a67a-1e3b975e7db6",
+              "name": "Vertical Layout",
+              "value": "vertical"
+            },
+            {
+              "_uid": "a28b0eb0-3caa-422e-ab17-23a90f731f99",
+              "value": "horizontal",
+              "name": "Horizontal Layout"
+            }
+          ],
+          "default_value": "1",
+          "exclude_empty_option": true,
+          "key": "numberOfColumnsOnMobile",
+          "pos": 3,
+          "display_name": "Number of Columns",
+          "required": true
+        },
+        "numberOfColumnsOnTablet": {
+          "type": "number",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "16349e72-57f2-49e9-8c06-93eac1bcd8d1",
+              "name": "Vertical Layout",
+              "value": "vertical"
+            },
+            {
+              "_uid": "ba559803-e92f-402f-9cc8-b7bb6958bd27",
+              "value": "horizontal",
+              "name": "Horizontal Layout"
+            }
+          ],
+          "default_value": "1",
+          "exclude_empty_option": true,
+          "display_name": "Number of Columns",
+          "required": true,
+          "key": "numberOfColumnsOnTablet",
+          "pos": 4
+        },
+        "numberOfColumnsOnDesktop": {
+          "type": "number",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "db417277-af10-43f5-b2b8-413aae4c1906",
+              "name": "Vertical Layout",
+              "value": "vertical"
+            },
+            {
+              "_uid": "ab683e2a-4355-4c7d-8dc0-88b2d521906d",
+              "value": "horizontal",
+              "name": "Horizontal Layout"
+            }
+          ],
+          "default_value": "1",
+          "exclude_empty_option": true,
+          "display_name": "Number of Columns",
+          "required": true,
+          "key": "layoutOnDesktop",
+          "pos": 5
+        },
+        "alignmentOnMobile": {
+          "type": "option",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "options": [
+            {
+              "_uid": "db000ac6-3097-458a-9910-f4b7a4704532",
+              "name": "Align Top Left",
+              "value": "alignTopLeft"
+            },
+            {
+              "_uid": "ee0c233b-bfae-43f1-94cf-258f8824922f",
+              "value": "alignLeft",
+              "name": "Align Left"
+            },
+            {
+              "_uid": "6fb4b287-5605-4deb-b32c-5b570995f0de",
+              "value": "alignBottomLeft",
+              "name": "Align Bottom Left"
+            },
+            {
+              "_uid": "a0a3213e-9f10-484a-be3b-ba793e1f8f78",
+              "value": "alignTopCenter",
+              "name": "Align Top Center"
+            },
+            {
+              "_uid": "8478e8fb-6053-41e4-96a0-9772442c59c1",
+              "value": "alignCenter",
+              "name": "Align Center"
+            },
+            {
+              "_uid": "e5daa039-b7f6-49e1-a2e9-82ef37ca1de1",
+              "value": "alignBottomCenter",
+              "name": "Align Bottom Center"
+            },
+            {
+              "_uid": "ffcf9c95-3cb0-4eff-b452-3eb3a80b73aa",
+              "value": "alignTopRight",
+              "name": "Align Top Right"
+            },
+            {
+              "_uid": "066f788d-946f-4635-b09a-b7264ead3ffb",
+              "value": "alignRight",
+              "name": "Align Right"
+            },
+            {
+              "_uid": "3cee4f46-713a-400e-9a7e-47eb5869e9d5",
+              "value": "alignBottomRight",
+              "name": "Align Bottom Right"
+            }
+          ],
+          "default_value": "alignTopLeft",
+          "display_name": "Alignment",
+          "required": true,
+          "key": "alignmentOnMobile",
+          "pos": 6
+        },
+        "alignmentOnTablet": {
+          "type": "option",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "options": [
+            {
+              "_uid": "25a6ccac-91a2-44fd-a7a2-0d382bda1320",
+              "name": "Align Top Left",
+              "value": "alignTopLeft"
+            },
+            {
+              "_uid": "65405bc7-8dc2-4953-8e32-5392ae31a16b",
+              "value": "alignLeft",
+              "name": "Align Left"
+            },
+            {
+              "_uid": "8dfff10c-0171-46f0-8018-5876373acb5b",
+              "value": "alignBottomLeft",
+              "name": "Align Bottom Left"
+            },
+            {
+              "_uid": "3da1da00-4188-4ac8-9ea4-af93f77fd90f",
+              "value": "alignTopCenter",
+              "name": "Align Top Center"
+            },
+            {
+              "_uid": "59cc19eb-6004-4ccd-8a97-f372b4f90253",
+              "value": "alignCenter",
+              "name": "Align Center"
+            },
+            {
+              "_uid": "6a6aa16c-6874-4827-a0cb-4f55e2656643",
+              "value": "alignBottomCenter",
+              "name": "Align Bottom Center"
+            },
+            {
+              "_uid": "84a4e132-f0ef-4863-a55d-c21a5c752e5b",
+              "value": "alignTopRight",
+              "name": "Align Top Right"
+            },
+            {
+              "_uid": "9b239b59-0c9a-4824-a3c6-cb454db10562",
+              "value": "alignRight",
+              "name": "Align Right"
+            },
+            {
+              "_uid": "36df40c8-eada-4ea2-91e3-898ba1bf7f76",
+              "value": "alignBottomRight",
+              "name": "Align Bottom Right"
+            }
+          ],
+          "default_value": "alignTopLeft",
+          "display_name": "Alignment",
+          "required": true,
+          "key": "alignmentOnTablet",
+          "pos": 7
+        },
+        "alignmentOnDesktop": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "7f290767-1cbf-4d80-8c9b-9553ba4ec3a8",
+              "name": "Align Top Left",
+              "value": "alignTopLeft"
+            },
+            {
+              "_uid": "6e5670a4-4acd-4a23-9aa7-d453f2013c84",
+              "value": "alignLeft",
+              "name": "Align Left"
+            },
+            {
+              "_uid": "ae56ee6f-a54d-4b3c-9abb-819c0afb2000",
+              "value": "alignBottomLeft",
+              "name": "Align Bottom Left"
+            },
+            {
+              "_uid": "da8da55c-7824-4690-a1da-e6e65216335b",
+              "value": "alignTopCenter",
+              "name": "Align Top Center"
+            },
+            {
+              "_uid": "18bbf479-f84a-4b52-881c-4edf6b4eb180",
+              "value": "alignCenter",
+              "name": "Align Center"
+            },
+            {
+              "_uid": "a29293cb-6c95-4a6f-9905-db7d033f35df",
+              "value": "alignBottomCenter",
+              "name": "Align Bottom Center"
+            },
+            {
+              "_uid": "b68b20ee-de1d-49ec-848f-ed049acabe04",
+              "value": "alignTopRight",
+              "name": "Align Top Right"
+            },
+            {
+              "_uid": "966dc694-6988-4ddf-bac7-77ce3b3697be",
+              "value": "alignRight",
+              "name": "Align Right"
+            },
+            {
+              "_uid": "257bc023-c31d-49db-8e67-8eff247ff48f",
+              "value": "alignBottomRight",
+              "name": "Align Bottom Right"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "alignTopLeft",
+          "display_name": "Alignment",
+          "required": true,
+          "key": "alignmentOnDesktop",
+          "pos": 8
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Page Section Grid",
+      "component_group_uuid": "051724a1-f338-4385-bc93-ba373664ccc7",
+      "color": "#00b3b0",
+      "icon": "block-mobile",
+      "component_group_name": "Styles"
     },
     {
       "name": "wrapper",

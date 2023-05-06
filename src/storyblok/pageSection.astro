@@ -2,7 +2,7 @@
 import { storyblokEditable } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import { PageSectionStoryblok } from "@types";
-import { resolveStylesBlocks } from "storyblok/styles/resolveStyles";
+import { resolvePageSectionStylesBlocks } from "storyblok/styles/resolveStyles";
 
 export type Props = {
   blok: PageSectionStoryblok;
@@ -10,60 +10,227 @@ export type Props = {
 
 const { blok } = Astro.props;
 
-const { classNames, wrapperClassNames } = resolveStylesBlocks(blok?.styles);
+const { classNames, cssVariables } = resolvePageSectionStylesBlocks(
+  blok?.styles
+);
 
-const sectionClassList = ["section", classNames];
+const sectionClassList = ["pageSection", classNames];
 ---
 
-<style>
-  .section {
-    min-height: var(--available-page-height);
+<style define:vars={cssVariables}>
+  .pageSection {
+    /* min-height: var(--available-page-height); */
     position: relative;
-    grid-column: 2 / -2;
   }
 
-  .wrapper {
+  .pageSectionGrid {
+    --number-of-columns: var(--numberOfColumnsOnMobile);
+
     display: subgrid;
-    grid-column: 1 / -1;
+    container-type: inline-size;
+    grid-template-columns:
+      1fr repeat(
+        var(--number-of-columns),
+        calc(min(95%, 1920px) / var(--number-of-columns))
+      )
+      1fr;
+    min-height: var(--available-page-height);
 
-    &.span-full-screen {
-      & > .section {
-        grid-column: 1 / -1;
-      }
+    :global(.column:first-child) {
+      grid-column: 2;
     }
 
-    &.tablet-span-full-screen {
-      @container (min-width: 768px) {
-        & > .section {
-          grid-column: 1 / -1;
+    /* Align Left */
+    &.alignTopLeft {
+      align-items: start;
+      justify-items: start;
+    }
+
+    &.alignLeft {
+      align-items: center;
+      justify-items: start;
+    }
+
+    &.alignBottomLeft {
+      align-items: end;
+      justify-items: start;
+    }
+    /*  */
+
+    /* Align Center */
+    &.alignTopCenter {
+      align-items: start;
+      justify-items: center;
+    }
+
+    &.alignCenter {
+      align-items: center;
+      justify-items: center;
+    }
+
+    &.alignBottomCenter {
+      align-items: end;
+      justify-items: center;
+    }
+    /*  */
+
+    /* Align Right */
+    &.alignTopRight {
+      align-items: start;
+      justify-items: end;
+    }
+
+    &.alignRight {
+      align-items: center;
+      justify-items: end;
+    }
+
+    &.alignBottomRight {
+      align-items: end;
+      justify-items: end;
+    }
+
+    @media (max-width: 768px) {
+      &[data-number-of-columns-on-mobile="1"] {
+        :global(.column) {
+          grid-column: 2;
         }
       }
     }
 
-    &.desktop-span-full-screen {
-      @container (min-width: 1024px) {
-        & > .section {
-          grid-column: 1 / -1;
+    @media (min-width: 768px) {
+      --number-of-columns: var(--numberOfColumnsOnTablet);
+
+      /* Align Left */
+      &.tablet-alignTopLeft {
+        justify-items: start;
+        align-items: start;
+      }
+
+      &.tablet-alignLeft {
+        justify-items: start;
+        align-items: center;
+      }
+
+      &.tablet-alignBottomLeft {
+        justify-items: start;
+        align-items: end;
+      }
+      /*  */
+
+      /* Align Center */
+      &.tablet-alignTopCenter {
+        justify-items: center;
+        align-items: start;
+      }
+
+      &.tablet-alignCenter {
+        justify-items: center;
+        align-items: center;
+      }
+
+      &.tablet-alignBottomCenter {
+        justify-items: center;
+        align-items: end;
+      }
+      /*  */
+
+      /* Align Right */
+      &.tablet-alignTopRight {
+        justify-items: end;
+        align-items: start;
+      }
+
+      &.tablet-alignRight {
+        justify-items: end;
+        align-items: center;
+      }
+
+      &.tablet-alignBottomRight {
+        justify-items: end;
+        align-items: end;
+      }
+      /*  */
+    }
+
+    @media (max-width: 1024px) {
+      &[data-number-of-columns-on-tablet="1"] {
+        :global(.column) {
+          grid-column: 2;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      --number-of-columns: var(--numberOfColumnsOnDesktop);
+
+      /* Align Left */
+      &.desktop-alignTopLeft {
+        align-items: start;
+        justify-items: start;
+      }
+
+      &.desktop-alignLeft {
+        align-items: center;
+        justify-items: start;
+      }
+
+      &.desktop-alignBottomLeft {
+        align-items: end;
+        justify-items: start;
+      }
+      /*  */
+
+      /* Align Center */
+      &.desktop-alignTopCenter {
+        align-items: start;
+        justify-items: center;
+      }
+
+      &.desktop-alignCenter {
+        align-items: center;
+        justify-items: center;
+      }
+
+      &.desktop-alignBottomCenter {
+        align-items: end;
+        justify-items: center;
+      }
+      /*  */
+
+      /* Align Right */
+      &.desktop-alignTopRight {
+        align-items: start;
+        justify-items: end;
+      }
+
+      &.desktop-alignRight {
+        align-items: center;
+        justify-items: end;
+      }
+
+      &.desktop-alignBottomRight {
+        align-items: end;
+        justify-items: end;
+      }
+
+      &[data-number-of-columns-on-desktop="1"] {
+        :global(.column) {
+          grid-column: 2;
         }
       }
     }
   }
+  /*  */
 </style>
 
-{
-  wrapperClassNames ? (
-    <div class:list={["wrapper", wrapperClassNames]}>
-      <section class:list={sectionClassList} {...storyblokEditable(blok)}>
-        {blok.columns?.map((column) => (
-          <StoryblokComponent blok={column} />
-        ))}
-      </section>
-    </div>
-  ) : (
-    <section class:list={sectionClassList} {...storyblokEditable(blok)}>
-      {blok.columns?.map((column) => (
-        <StoryblokComponent blok={column} />
-      ))}
-    </section>
-  )
-}
+<!-- Page Section -->
+<section
+  class:list={sectionClassList}
+  data-number-of-columns-on-mobile={cssVariables.numberOfColumnsOnMobile}
+  data-number-of-columns-on-tablet={cssVariables.numberOfColumnsOnTablet}
+  data-number-of-columns-on-desktop={cssVariables.numberOfColumnsOnDesktop}
+  {...storyblokEditable(blok)}>
+  {blok.columns?.map((column) => <StoryblokComponent blok={column} />)}
+</section>
+<!--  -->

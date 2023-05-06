@@ -1,7 +1,7 @@
 ---
 import { renderRichText } from "@storyblok/astro";
 import { ColumnStoryblok } from "@types";
-import { resolveStylesBlocks } from "storyblok/styles/resolveStyles";
+import { resolveColumnStylesBlocks } from "storyblok/styles/resolveStyles";
 
 const { blok } = Astro.props;
 
@@ -23,12 +23,49 @@ const renderedRichText = removeEmptyTags(
   extractImgTag(renderRichText(blok.content))
 );
 
-const { classNames } = resolveStylesBlocks(blok?.styles);
+const { classNames } = resolveColumnStylesBlocks(blok?.styles);
 ---
 
 <style>
   .column {
+    /* aspect-ratio: 9 / 16; */
+
+    :global(img) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.escapeContainer {
+      grid-column: span 2;
+
+      &:first-child {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    @media (min-width: 768px) {
+      &.tablet-escapeContainer {
+        grid-column: span 2;
+
+        &:first-child {
+          grid-column: 1 / span 2;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      &.desktop-escapeContainer {
+        grid-column: span 2;
+
+        &:first-child {
+          grid-column: 1 / span 2;
+        }
+      }
+    }
   }
 </style>
 
+<!-- Column -->
 <div class:list={["column", classNames]} set:html={renderedRichText} />
+<!--  -->

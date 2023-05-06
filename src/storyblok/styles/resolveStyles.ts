@@ -1,8 +1,71 @@
-import { AutoLayoutStoryblok, PageSectionStoryblok } from "@types";
-import { WrapperStoryblok } from "@types";
+import { ColumnStoryblok, PageSectionStoryblok } from "@types";
 
-export const resolveStylesBlocks = (
-  styles?: (AutoLayoutStoryblok | WrapperStoryblok)[]
+export const resolvePageSectionStylesBlocks = (
+  styles?: PageSectionStoryblok["styles"]
+) => {
+  let classNames = "";
+  let wrapperClassNames = "";
+
+  let cssVariables = new Map();
+
+  if (!styles) {
+    return {
+      classNames,
+      wrapperClassNames,
+      cssVariables: Object.fromEntries(cssVariables),
+    };
+  }
+
+  styles.forEach((style) => {
+    const { component } = style;
+
+    // Auto Layout
+    if (component === "pageSectionGrid") {
+      const {
+        layoutOnMobile,
+        layoutOnTablet,
+        layoutOnDesktop,
+        alignmentOnMobile,
+        alignmentOnTablet,
+        alignmentOnDesktop,
+        numberOfColumnsOnMobile,
+        numberOfColumnsOnTablet,
+        numberOfColumnsOnDesktop,
+      } = style;
+
+      classNames += `pageSectionGrid `;
+
+      // Layout
+      if (layoutOnMobile) classNames += `${layoutOnMobile} `;
+      if (layoutOnTablet) classNames += `tablet-${layoutOnTablet} `;
+      if (layoutOnDesktop) classNames += `desktop-${layoutOnDesktop} `;
+
+      // Alignment
+      if (alignmentOnMobile) classNames += `${alignmentOnMobile} `;
+      if (alignmentOnTablet) classNames += `tablet-${alignmentOnTablet} `;
+      if (alignmentOnDesktop) classNames += `desktop-${alignmentOnDesktop} `;
+
+      // Number of Columns
+      if (numberOfColumnsOnMobile)
+        cssVariables.set("numberOfColumnsOnMobile", numberOfColumnsOnMobile);
+
+      if (numberOfColumnsOnTablet)
+        cssVariables.set("numberOfColumnsOnTablet", numberOfColumnsOnTablet);
+
+      if (numberOfColumnsOnDesktop)
+        cssVariables.set("numberOfColumnsOnDesktop", numberOfColumnsOnDesktop);
+    }
+  });
+
+  return {
+    classNames: classNames.trim(),
+    wrapperClassNames,
+    cssVariables: Object.fromEntries(cssVariables),
+  };
+};
+
+export const resolveColumnStylesBlocks = (
+  styles?: ColumnStoryblok["styles"]
 ) => {
   let classNames = "";
   let wrapperClassNames = "";
@@ -60,22 +123,21 @@ export const resolveStylesBlocks = (
         classNames += `desktop-verticalResizing-${verticalResizingOnDesktop} `;
     }
 
-    // Wrapper
-    if (component === "wrapper") {
+    if (component === "columnStyles") {
       const {
         shouldContainerizeOnMobile,
         shouldContainerizeOnTablet,
         shouldContainerizeOnDesktop,
       } = style;
 
-      // Containerize
-      if (!shouldContainerizeOnMobile) wrapperClassNames += `span-full-screen `;
+      if (shouldContainerizeOnMobile === false)
+        classNames += `escapeContainer `;
 
-      if (!shouldContainerizeOnTablet)
-        wrapperClassNames += `tablet-span-full-screen `;
+      if (shouldContainerizeOnTablet === false)
+        classNames += `tablet-escapeContainer `;
 
-      if (!shouldContainerizeOnDesktop)
-        wrapperClassNames += `desktop-span-full-screen `;
+      if (shouldContainerizeOnDesktop === false)
+        classNames += `desktop-escapeContainer `;
     }
   });
 

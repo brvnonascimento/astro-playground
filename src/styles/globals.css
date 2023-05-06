@@ -194,15 +194,22 @@ ul {
   margin: 0;
 }
 
-body > main,
-header,
-footer {
+body > header,
+footer,
+main {
   display: grid;
-  grid-template-columns: 1fr min(95%, 1920px) 1fr;
-  container-type: inline-size;
+  grid-template-columns:
+    1fr
+    min(95%, 1920px)
+    1fr;
 
   & > * {
     grid-column: 2;
+  }
+
+  &.pageSection > *:only-child {
+    grid-column: 2 / -2;
+    background: red;
   }
 }
 
@@ -210,6 +217,7 @@ main[tabindex="-1"] {
   outline: none;
 }
 
+/* TODO: Check if these are going to be useful for Columns and delete otherwise */
 .autoLayout {
   display: flex;
 
@@ -345,7 +353,7 @@ main[tabindex="-1"] {
   }
   /*  */
 
-  @container (min-width: 768px) {
+  @media (min-width: 768px) {
     /* Vertical Layout */
     &.tablet-vertical {
       flex-direction: column;
@@ -480,7 +488,7 @@ main[tabindex="-1"] {
     /*  */
   }
 
-  @container (min-width: 1024px) {
+  @media (min-width: 1024px) {
     /* Vertical Layout */
     &.desktop-vertical {
       flex-direction: column;

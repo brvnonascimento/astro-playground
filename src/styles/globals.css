@@ -624,6 +624,54 @@ main[tabindex="-1"] {
   }
 }
 
+.textAlign-left {
+  text-align: left;
+}
+
+.textAlign-center {
+  text-align: center;
+}
+
+.textAlign-right {
+  text-align: right;
+}
+
+.tablet-textAlign-left {
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.tablet-textAlign-center {
+  @media (min-width: 768px) {
+    text-align: center;
+  }
+}
+
+.tablet-textAlign-right {
+  @media (min-width: 768px) {
+    text-align: right;
+  }
+}
+
+.desktop-textAlign-left {
+  @media (min-width: 1024px) {
+    text-align: left;
+  }
+}
+
+.desktop-textAlign-center {
+  @media (min-width: 1024px) {
+    text-align: center;
+  }
+}
+
+.desktop-textAlign-right {
+  @media (min-width: 1024px) {
+    text-align: right;
+  }
+}
+
 .cta {
   background: var(--color-primary);
   padding: 1rem 2rem;

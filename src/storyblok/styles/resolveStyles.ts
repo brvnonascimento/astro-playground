@@ -164,7 +164,12 @@ export const resolveColumnStylesBlocks = (
     }
   });
 
-  return { classNames: classNames(columnStylesClassName) };
+  return {
+    classNames: classNames(
+      columnStylesClassName,
+      resolveTextStylesClassNames(styles)
+    ),
+  };
 };
 
 export const resolveTextStylesClassNames = (styles?: Styles) => {

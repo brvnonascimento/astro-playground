@@ -35,6 +35,8 @@ export default defineConfig({
         // Blocks
         pageSection: "storyblok/pageSection",
         column: "storyblok/column",
+        // Atoms
+        ctaButton: "storyblok/atoms/CTAButton",
       },
       apiOptions: {
         region: "us",

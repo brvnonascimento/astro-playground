@@ -29,6 +29,7 @@ const page = await storyblokApi.get(
   {
     // version: import.meta.env.DEV ? "draft" : "published",
     version: "draft",
+    resolve_relations: "internalLink.page",
   }
 );
 

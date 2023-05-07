@@ -1,0 +1,34 @@
+---
+import { CtaButtonStoryblok } from "@types";
+import { resolveHrefFromInternalLinkBlok } from "@utils/link";
+
+type Props = {
+  blok: CtaButtonStoryblok;
+};
+
+const { blok } = Astro.props;
+
+const link = blok?.link?.[0];
+console.log({ link });
+---
+
+<style>
+  .cta {
+    background: var(--color-primary);
+    padding: 1rem 2rem;
+  }
+</style>
+
+{
+  link ? (
+    <a
+      class="cta"
+      href={
+        link.component === "internalLink"
+          ? resolveHrefFromInternalLinkBlok(link)
+          : link.url
+      }>
+      {link.title}
+    </a>
+  ) : null
+}

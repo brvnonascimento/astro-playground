@@ -1,8 +1,7 @@
 ---
 import { renderRichText } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import { ColumnStoryblok } from "@types";
-
-import { CTAButton } from "storyblok/atoms/CTAButton";
 import { resolveColumnStylesBlocks } from "storyblok/styles/resolveStyles";
 
 const { blok } = Astro.props;
@@ -20,21 +19,6 @@ const removeEmptyTags = (htmlString: string): string => {
   const regex = /<([^\s>]+)(\s[^>]*)?>\s*<\/\1>/g;
   return htmlString.replace(regex, "");
 };
-
-const renderedRichText = removeEmptyTags(
-  extractImgTag(
-    renderRichText(blok.content, {
-      resolver: (component, blok) => {
-        switch (component) {
-          case "ctaButton":
-            return CTAButton(blok);
-          default:
-            return null;
-        }
-      },
-    })
-  )
-);
 
 const { classNames } = resolveColumnStylesBlocks(blok?.styles);
 ---
@@ -80,5 +64,22 @@ const { classNames } = resolveColumnStylesBlocks(blok?.styles);
 </style>
 
 <!-- Column -->
-<div class:list={["column", classNames]} set:html={renderedRichText} />
+<div class:list={["column", classNames]}>
+  {
+    blok?.content?.content.map((block, i) => {
+      if (block.type === "blok") {
+        return block?.attrs?.body?.map((childBlock) => {
+          return <StoryblokComponent blok={childBlock} />;
+        });
+      }
+
+      const renderedRichText = removeEmptyTags(
+        // @ts-expect-error this workaround works for now
+        extractImgTag(renderRichText({ content: [block] }))
+      );
+
+      return <Fragment set:html={renderedRichText} />;
+    })
+  }
+</div>
 <!--  -->

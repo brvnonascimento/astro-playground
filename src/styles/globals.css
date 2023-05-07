@@ -671,8 +671,3 @@ main[tabindex="-1"] {
     text-align: right;
   }
 }
-
-.cta {
-  background: var(--color-primary);
-  padding: 1rem 2rem;
-}

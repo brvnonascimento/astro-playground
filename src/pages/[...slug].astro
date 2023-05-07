@@ -27,7 +27,7 @@ const storyblokApi = useStoryblokApi();
 const page = await storyblokApi.get(
   `cdn/stories/pages/${slug.replace(/pages/, "")}`,
   {
-    version: import.meta.env.PUBLIC_VERSION,
+    version: import.meta.env.PUBLIC_STORYBLOK_VERSION,
     resolve_relations: "internalLink.page",
   }
 );

@@ -13,7 +13,7 @@ const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get("cdn/stories", {
   starts_with: "layout/",
   resolve_relations: "internalLink.page",
-  version: import.meta.env.PUBLIC_VERSION,
+  version: import.meta.env.PUBLIC_STORYBLOK_VERSION,
 });
 
 const header = data.stories.find(

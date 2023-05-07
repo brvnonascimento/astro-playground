@@ -18,6 +18,7 @@ export interface AutoLayoutStoryblok {
     | "alignRight"
     | "alignBottomRight";
   alignmentOnTablet:
+    | ""
     | "alignTopLeft"
     | "alignLeft"
     | "alignBottomLeft"
@@ -28,6 +29,7 @@ export interface AutoLayoutStoryblok {
     | "alignRight"
     | "alignBottomRight";
   alignmentOnDesktop:
+    | ""
     | "alignTopLeft"
     | "alignLeft"
     | "alignBottomLeft"
@@ -38,10 +40,10 @@ export interface AutoLayoutStoryblok {
     | "alignRight"
     | "alignBottomRight";
   verticalResizingOnMobile: "hugContent" | "fillContainer";
-  verticalResizingOnTablet: "hugContent" | "fillContainer";
-  verticalResizingOnDesktop: "hugContent" | "fillContainer";
+  verticalResizingOnTablet?: "" | "hugContent" | "fillContainer";
+  verticalResizingOnDesktop: "" | "hugContent" | "fillContainer";
   horizontalResizingOnMobile: "hugContent" | "fillContainer";
-  horizontalResizingOnTablet: "" | "hugContent" | "fillContainer";
+  horizontalResizingOnTablet?: "" | "hugContent" | "fillContainer";
   horizontalResizingOnDesktop: "" | "hugContent" | "fillContainer";
   _uid: string;
   component: "autoLayout";
@@ -206,7 +208,8 @@ export interface PageSectionGridStoryblok {
     | "alignTopRight"
     | "alignRight"
     | "alignBottomRight";
-  alignmentOnTablet:
+  alignmentOnTablet?:
+    | ""
     | "alignTopLeft"
     | "alignLeft"
     | "alignBottomLeft"
@@ -216,7 +219,8 @@ export interface PageSectionGridStoryblok {
     | "alignTopRight"
     | "alignRight"
     | "alignBottomRight";
-  alignmentOnDesktop:
+  alignmentOnDesktop?:
+    | ""
     | "alignTopLeft"
     | "alignLeft"
     | "alignBottomLeft"
@@ -242,8 +246,8 @@ export interface TextStylesStoryblok {
   tablet?: any;
   desktop?: any;
   textAlignOnMobile: "left" | "center" | "right";
-  textAlignOnTablet: "left" | "center" | "right";
-  textAlignOnDesktop: "left" | "center" | "right";
+  textAlignOnTablet?: "" | "left" | "center" | "right";
+  textAlignOnDesktop?: "" | "left" | "center" | "right";
   _uid: string;
   component: "textStyles";
   [k: string]: any;

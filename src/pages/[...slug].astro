@@ -7,7 +7,7 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 //   const storyblokApi = useStoryblokApi();
 
 //   const { data } = await storyblokApi.get("cdn/links", {
-//     version: "draft",
+
 //   });
 
 //   const links: Record<string, unknown>[] = Object.values(data.links);
@@ -27,8 +27,7 @@ const storyblokApi = useStoryblokApi();
 const page = await storyblokApi.get(
   `cdn/stories/pages/${slug.replace(/pages/, "")}`,
   {
-    // version: import.meta.env.DEV ? "draft" : "published",
-    version: "draft",
+    version: import.meta.env.PUBLIC_VERSION,
     resolve_relations: "internalLink.page",
   }
 );

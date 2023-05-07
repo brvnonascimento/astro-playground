@@ -4,7 +4,7 @@
       "name": "autoLayout",
       "display_name": "Auto Layout",
       "created_at": "2023-05-03T02:42:47.821Z",
-      "updated_at": "2023-05-04T21:34:47.112Z",
+      "updated_at": "2023-05-07T18:24:43.225Z",
       "id": 74277,
       "schema": {
         "mobile": {
@@ -100,7 +100,7 @@
               "name": "Horizontal Layout"
             }
           ],
-          "default_value": "vertical",
+          "default_value": "horizontal",
           "exclude_empty_option": true,
           "display_name": "Layout",
           "required": true
@@ -163,7 +163,7 @@
         "alignmentOnTablet": {
           "type": "option",
           "use_uuid": true,
-          "exclude_empty_option": true,
+          "exclude_empty_option": false,
           "options": [
             {
               "_uid": "25a6ccac-91a2-44fd-a7a2-0d382bda1320",
@@ -211,7 +211,7 @@
               "name": "Align Bottom Right"
             }
           ],
-          "default_value": "alignTopLeft",
+          "default_value": "",
           "display_name": "Alignment",
           "required": true
         },
@@ -265,8 +265,8 @@
               "name": "Align Bottom Right"
             }
           ],
-          "exclude_empty_option": true,
-          "default_value": "alignTopLeft",
+          "exclude_empty_option": false,
+          "default_value": "",
           "display_name": "Alignment",
           "required": true
         },
@@ -293,7 +293,7 @@
         "verticalResizingOnTablet": {
           "type": "option",
           "use_uuid": true,
-          "exclude_empty_option": true,
+          "exclude_empty_option": false,
           "options": [
             {
               "_uid": "f099a059-06a5-4bbd-8102-5438d7cb1f25",
@@ -306,9 +306,9 @@
               "name": "Fill Container"
             }
           ],
-          "default_value": "hugContent",
+          "default_value": "",
           "display_name": "Vertical Resizing",
-          "required": true
+          "required": false
         },
         "verticalResizingOnDesktop": {
           "type": "option",
@@ -325,8 +325,8 @@
               "name": "Fill Container"
             }
           ],
-          "default_value": "hugContent",
-          "exclude_empty_option": true,
+          "default_value": "",
+          "exclude_empty_option": false,
           "display_name": "Vertical Resizing",
           "required": true
         },
@@ -366,8 +366,8 @@
               "name": "Fill Container"
             }
           ],
-          "default_value": "hugContent",
-          "required": true
+          "default_value": "",
+          "required": false
         },
         "horizontalResizingOnDesktop": {
           "type": "option",
@@ -385,7 +385,7 @@
               "name": "Fill Container"
             }
           ],
-          "default_value": "hugContent",
+          "default_value": "",
           "required": true
         }
       },
@@ -774,7 +774,7 @@
       "name": "pageSectionGrid",
       "display_name": "Page Section Grid",
       "created_at": "2023-05-05T21:26:34.313Z",
-      "updated_at": "2023-05-07T18:08:39.885Z",
+      "updated_at": "2023-05-07T18:29:41.386Z",
       "id": 75538,
       "schema": {
         "mobile": {
@@ -948,7 +948,7 @@
         "alignmentOnTablet": {
           "type": "option",
           "use_uuid": true,
-          "exclude_empty_option": true,
+          "exclude_empty_option": false,
           "options": [
             {
               "_uid": "25a6ccac-91a2-44fd-a7a2-0d382bda1320",
@@ -996,9 +996,9 @@
               "name": "Align Bottom Right"
             }
           ],
-          "default_value": "alignTopLeft",
+          "default_value": "",
           "display_name": "Alignment",
-          "required": true,
+          "required": false,
           "key": "alignmentOnTablet",
           "pos": 7
         },
@@ -1052,10 +1052,10 @@
               "name": "Align Bottom Right"
             }
           ],
-          "exclude_empty_option": true,
-          "default_value": "alignTopLeft",
+          "exclude_empty_option": false,
+          "default_value": "",
           "display_name": "Alignment",
-          "required": true,
+          "required": false,
           "key": "alignmentOnDesktop",
           "pos": 8
         },
@@ -1101,7 +1101,7 @@
       "name": "textStyles",
       "display_name": null,
       "created_at": "2023-05-06T21:29:34.416Z",
-      "updated_at": "2023-05-06T21:55:03.678Z",
+      "updated_at": "2023-05-07T18:30:51.926Z",
       "id": 75624,
       "schema": {
         "mobile": {
@@ -1167,9 +1167,9 @@
               "name": "Right"
             }
           ],
-          "exclude_empty_option": true,
-          "default_value": "left",
-          "required": true,
+          "exclude_empty_option": false,
+          "default_value": "",
+          "required": false,
           "display_name": "Text Alignment"
         },
         "textAlignOnDesktop": {
@@ -1192,9 +1192,9 @@
               "name": "Right"
             }
           ],
-          "exclude_empty_option": true,
-          "default_value": "left",
-          "required": true,
+          "exclude_empty_option": false,
+          "default_value": "",
+          "required": false,
           "display_name": "Text Alignment"
         }
       },

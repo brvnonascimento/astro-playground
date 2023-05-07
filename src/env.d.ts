@@ -3,6 +3,7 @@
 
 interface ImportMetaEnv {
   readonly PUBLIC_STORYBLOK_ACCESS_TOKEN: string;
+  readonly PUBLIC_VERSION: "draft" | "published";
 }
 
 interface ImportMeta {

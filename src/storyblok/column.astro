@@ -20,10 +20,10 @@ const removeEmptyTags = (htmlString: string): string => {
   return htmlString.replace(regex, "");
 };
 
-const { classNames } = resolveColumnStylesBlocks(blok?.styles);
+const { classNames, cssVariables } = resolveColumnStylesBlocks(blok?.styles);
 ---
 
-<style>
+<style define:vars={cssVariables}>
   .column {
     /* aspect-ratio: 9 / 16; */
 

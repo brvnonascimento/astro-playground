@@ -1,4 +1,3 @@
-import { TextStylesStoryblok } from "@types";
 import { ColumnStoryblok, PageSectionStoryblok } from "@types";
 import classNames from "classnames";
 
@@ -86,12 +85,21 @@ export const resolvePageSectionStylesBlocks = (
     }
   });
 
+  const textStylesClassNames = resolveTextStylesClassNames(styles);
+
+  const { classNames: paddingClassNames, cssVariables: paddingCssVariables } =
+    resolvePaddingStyles(styles);
+
   return {
     classNames: classNames(
       pageSectionClassNames,
-      resolveTextStylesClassNames(styles)
+      textStylesClassNames,
+      paddingClassNames
     ),
-    cssVariables: Object.fromEntries(cssVariables),
+    cssVariables: {
+      ...Object.fromEntries(cssVariables),
+      ...paddingCssVariables,
+    },
   };
 };
 
@@ -187,11 +195,16 @@ export const resolveColumnStylesBlocks = (
     }
   });
 
+  const { classNames: paddingClassNames, cssVariables: paddingCssVariables } =
+    resolvePaddingStyles(styles);
+
   return {
     classNames: classNames(
       columnStylesClassName,
-      resolveTextStylesClassNames(styles)
+      resolveTextStylesClassNames(styles),
+      paddingClassNames
     ),
+    cssVariables: { ...paddingCssVariables },
   };
 };
 
@@ -219,4 +232,77 @@ export const resolveTextStylesClassNames = (styles?: Styles) => {
   });
 
   return classNames(textStyleClassNames);
+};
+
+export const resolvePaddingStyles = (styles?: Styles) => {
+  const paddingClassNames: string[] = [];
+  const cssVariables = new Map();
+
+  if (!styles) {
+    return Object.fromEntries(cssVariables);
+  }
+
+  styles.forEach((style) => {
+    const { component } = style;
+
+    if (component === "padding") {
+      const {
+        paddingLeftOnMobile,
+        paddingLeftOnTablet,
+        paddingLeftOnDesktop,
+        paddingRightOnMobile,
+        paddingRightOnTablet,
+        paddingRightOnDesktop,
+        paddingTopOnMobile,
+        paddingTopOnTablet,
+        paddingTopOnDesktop,
+        paddingBottomOnMobile,
+        paddingBottomOnTablet,
+        paddingBottomOnDesktop,
+      } = style;
+
+      paddingClassNames.push("padding");
+
+      if (paddingLeftOnMobile)
+        cssVariables.set("paddingLeftOnMobile", paddingLeftOnMobile);
+
+      if (paddingLeftOnTablet)
+        cssVariables.set("paddingLeftOnTablet", paddingLeftOnTablet);
+
+      if (paddingLeftOnDesktop)
+        cssVariables.set("paddingLeftOnDesktop", paddingLeftOnDesktop);
+
+      if (paddingRightOnMobile)
+        cssVariables.set("paddingRightOnMobile", paddingRightOnMobile);
+
+      if (paddingRightOnTablet)
+        cssVariables.set("paddingRightOnTablet", paddingRightOnTablet);
+
+      if (paddingRightOnDesktop)
+        cssVariables.set("paddingRightOnDesktop", paddingRightOnDesktop);
+
+      if (paddingTopOnMobile)
+        cssVariables.set("paddingTopOnMobile", paddingTopOnMobile);
+
+      if (paddingTopOnTablet)
+        cssVariables.set("paddingTopOnTablet", paddingTopOnTablet);
+
+      if (paddingTopOnDesktop)
+        cssVariables.set("paddingTopOnDesktop", paddingTopOnDesktop);
+
+      if (paddingBottomOnMobile)
+        cssVariables.set("paddingBottomOnMobile", paddingBottomOnMobile);
+
+      if (paddingBottomOnTablet)
+        cssVariables.set("paddingBottomOnTablet", paddingBottomOnTablet);
+
+      if (paddingBottomOnDesktop)
+        cssVariables.set("paddingBottomOnDesktop", paddingBottomOnDesktop);
+    }
+  });
+
+  return {
+    classNames: classNames(paddingClassNames),
+    cssVariables: Object.fromEntries(cssVariables),
+  };
 };

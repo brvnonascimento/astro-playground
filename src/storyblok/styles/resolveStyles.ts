@@ -33,6 +33,12 @@ export const resolvePageSectionStylesBlocks = (
         numberOfColumnsOnMobile,
         numberOfColumnsOnTablet,
         numberOfColumnsOnDesktop,
+        columnGapOnMobile,
+        columnGapOnTablet,
+        columnGapOnDesktop,
+        rowGapOnMobile,
+        rowGapOnTablet,
+        rowGapOnDesktop,
       } = style;
 
       pageSectionClassNames.push(`pageSectionGrid`);
@@ -60,6 +66,23 @@ export const resolvePageSectionStylesBlocks = (
 
       if (numberOfColumnsOnDesktop)
         cssVariables.set("numberOfColumnsOnDesktop", numberOfColumnsOnDesktop);
+
+      // Column Gap
+      if (columnGapOnMobile)
+        cssVariables.set("columnGapOnMobile", columnGapOnMobile);
+
+      if (columnGapOnTablet)
+        cssVariables.set("columnGapOnTablet", columnGapOnTablet);
+
+      if (columnGapOnDesktop)
+        cssVariables.set("columnGapOnDesktop", columnGapOnDesktop);
+
+      // Row Gap
+      if (rowGapOnMobile) cssVariables.set("rowGapOnMobile", rowGapOnMobile);
+
+      if (rowGapOnTablet) cssVariables.set("rowGapOnTablet", rowGapOnTablet);
+
+      if (rowGapOnDesktop) cssVariables.set("rowGapOnDesktop", rowGapOnDesktop);
     }
   });
 

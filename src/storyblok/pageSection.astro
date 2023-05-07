@@ -25,6 +25,9 @@ const sectionClassList = ["pageSection", classNames];
 
   .pageSectionGrid {
     --number-of-columns: var(--numberOfColumnsOnMobile);
+    --number-of-columns: var(--numberOfColumnsOnMobile);
+    --column-gap: var(--columnGapOnMobile);
+    --row-gap: var(--rowGapOnMobile);
 
     display: subgrid;
     container-type: inline-size;
@@ -35,9 +38,15 @@ const sectionClassList = ["pageSection", classNames];
       )
       1fr;
     min-height: var(--available-page-height);
+    row-gap: var(--row-gap);
 
     :global(.column:first-child) {
       grid-column: 2;
+    }
+
+    /* This is a hack until a better is solution found */
+    :global(.column:not(:last-child)) {
+      width: calc(100% - var(--column-gap));
     }
 
     /* Align Left */
@@ -99,7 +108,12 @@ const sectionClassList = ["pageSection", classNames];
     }
 
     @media (min-width: 768px) {
-      --number-of-columns: var(--numberOfColumnsOnTablet);
+      --number-of-columns: var(
+        --numberOfColumnsOnTablet,
+        var(--numberOfColumnsOnMobile)
+      );
+      --column-gap: var(--columnGapOnTablet, var(--columnGapOnMobiel));
+      --row-gap: var(--rowGapOnTablet, var(--rowGapOnMobile));
 
       /* Align Left */
       &.tablet-alignTopLeft {
@@ -162,7 +176,12 @@ const sectionClassList = ["pageSection", classNames];
     }
 
     @media (min-width: 1024px) {
-      --number-of-columns: var(--numberOfColumnsOnDesktop);
+      --number-of-columns: var(
+        --numberOfColumnsOnDesktop,
+        var(--numberOfColumnsOnTablet)
+      );
+      --column-gap: var(--columnGapOnDesktop, var(--columnGapOnTablet));
+      --row-gap: var(--rowGapOnDesktop, var(--rowGapOnTablet));
 
       /* Align Left */
       &.desktop-alignTopLeft {

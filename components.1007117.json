@@ -548,11 +548,15 @@
       "name": "externalLink",
       "display_name": null,
       "created_at": "2023-05-06T20:06:24.547Z",
-      "updated_at": "2023-05-06T20:12:56.613Z",
+      "updated_at": "2023-05-07T15:57:15.253Z",
       "id": 75619,
       "schema": {
         "title": {
           "type": "text"
+        },
+        "url": {
+          "type": "multilink",
+          "display_name": "URL"
         }
       },
       "image": null,
@@ -770,7 +774,7 @@
       "name": "pageSectionGrid",
       "display_name": "Page Section Grid",
       "created_at": "2023-05-05T21:26:34.313Z",
-      "updated_at": "2023-05-06T16:13:37.171Z",
+      "updated_at": "2023-05-07T18:08:39.885Z",
       "id": 75538,
       "schema": {
         "mobile": {
@@ -779,7 +783,9 @@
             "layout",
             "layoutOnMobile",
             "alignmentOnMobile",
-            "numberOfColumnsOnMobile"
+            "numberOfColumnsOnMobile",
+            "columnGapOnMobile",
+            "rowGapOnMobile"
           ],
           "key": "mobile",
           "pos": 0
@@ -790,7 +796,9 @@
             "layout",
             "layoutOnTablet",
             "alignmentOnTablet",
-            "numberOfColumnsOnTablet"
+            "numberOfColumnsOnTablet",
+            "columnGapOnTablet",
+            "rowGapOnTablet"
           ],
           "key": "tablet",
           "pos": 1
@@ -801,7 +809,9 @@
             "layout",
             "layoutOnDesktop",
             "alignmentOnDesktop",
-            "numberOfColumnsOnDesktop"
+            "numberOfColumnsOnDesktop",
+            "columnGapOnDesktop",
+            "rowGapOnDesktop"
           ],
           "key": "desktop",
           "pos": 2
@@ -826,7 +836,9 @@
           "key": "numberOfColumnsOnMobile",
           "pos": 3,
           "display_name": "Number of Columns",
-          "required": true
+          "required": true,
+          "max_value": 4,
+          "min_value": 1
         },
         "numberOfColumnsOnTablet": {
           "type": "number",
@@ -848,7 +860,9 @@
           "display_name": "Number of Columns",
           "required": true,
           "key": "numberOfColumnsOnTablet",
-          "pos": 4
+          "pos": 4,
+          "max_value": 6,
+          "min_value": 1
         },
         "numberOfColumnsOnDesktop": {
           "type": "number",
@@ -870,7 +884,9 @@
           "display_name": "Number of Columns",
           "required": true,
           "key": "layoutOnDesktop",
-          "pos": 5
+          "pos": 5,
+          "max_value": 12,
+          "min_value": 1
         },
         "alignmentOnMobile": {
           "type": "option",
@@ -1042,6 +1058,30 @@
           "required": true,
           "key": "alignmentOnDesktop",
           "pos": 8
+        },
+        "columnGapOnMobile": {
+          "type": "text",
+          "display_name": "Horizontal Space Between Items"
+        },
+        "columnGapOnTablet": {
+          "type": "text",
+          "display_name": "Horizontal Space Between Items"
+        },
+        "columnGapOnDesktop": {
+          "type": "text",
+          "display_name": "Horizontal Space Between Items"
+        },
+        "rowGapOnMobile": {
+          "type": "text",
+          "display_name": "Vertical Space Between Items"
+        },
+        "rowGapOnTablet": {
+          "type": "text",
+          "display_name": "Vertical Space Between Items"
+        },
+        "rowGapOnDesktop": {
+          "type": "text",
+          "display_name": "Vertical Space Between Items"
         }
       },
       "image": null,

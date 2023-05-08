@@ -239,7 +239,10 @@ export const resolvePaddingStyles = (styles?: Styles) => {
   const cssVariables = new Map();
 
   if (!styles) {
-    return Object.fromEntries(cssVariables);
+    return {
+      cssVariables: Object.fromEntries(cssVariables),
+      classNames: classNames(paddingClassNames),
+    };
   }
 
   styles.forEach((style) => {
@@ -261,43 +264,66 @@ export const resolvePaddingStyles = (styles?: Styles) => {
         paddingBottomOnDesktop,
       } = style;
 
-      paddingClassNames.push("padding");
-
-      if (paddingLeftOnMobile)
+      if (paddingLeftOnMobile) {
+        paddingClassNames.push("padding-left");
         cssVariables.set("paddingLeftOnMobile", paddingLeftOnMobile);
+      }
 
-      if (paddingLeftOnTablet)
+      if (paddingLeftOnTablet) {
+        paddingClassNames.push("padding-left-tablet");
         cssVariables.set("paddingLeftOnTablet", paddingLeftOnTablet);
+      }
 
-      if (paddingLeftOnDesktop)
+      if (paddingLeftOnDesktop) {
+        paddingClassNames.push("padding-left-desktop");
         cssVariables.set("paddingLeftOnDesktop", paddingLeftOnDesktop);
+      }
 
-      if (paddingRightOnMobile)
+      if (paddingRightOnMobile) {
+        paddingClassNames.push("padding-right");
+
         cssVariables.set("paddingRightOnMobile", paddingRightOnMobile);
+      }
 
-      if (paddingRightOnTablet)
+      if (paddingRightOnTablet) {
+        paddingClassNames.push("padding-right-tablet");
         cssVariables.set("paddingRightOnTablet", paddingRightOnTablet);
+      }
 
-      if (paddingRightOnDesktop)
+      if (paddingRightOnDesktop) {
+        paddingClassNames.push("padding-right-desktop");
         cssVariables.set("paddingRightOnDesktop", paddingRightOnDesktop);
+      }
 
-      if (paddingTopOnMobile)
+      if (paddingTopOnMobile) {
+        paddingClassNames.push("padding-top");
         cssVariables.set("paddingTopOnMobile", paddingTopOnMobile);
+      }
 
-      if (paddingTopOnTablet)
+      if (paddingTopOnTablet) {
+        paddingClassNames.push("padding-top-tablet");
         cssVariables.set("paddingTopOnTablet", paddingTopOnTablet);
+      }
 
-      if (paddingTopOnDesktop)
+      if (paddingTopOnDesktop) {
+        paddingClassNames.push("padding-top-desktop");
         cssVariables.set("paddingTopOnDesktop", paddingTopOnDesktop);
+      }
 
-      if (paddingBottomOnMobile)
+      if (paddingBottomOnMobile) {
+        paddingClassNames.push("padding-bottom");
         cssVariables.set("paddingBottomOnMobile", paddingBottomOnMobile);
+      }
 
-      if (paddingBottomOnTablet)
+      if (paddingBottomOnTablet) {
+        paddingClassNames.push("padding-bottom-tablet");
         cssVariables.set("paddingBottomOnTablet", paddingBottomOnTablet);
+      }
 
-      if (paddingBottomOnDesktop)
+      if (paddingBottomOnDesktop) {
+        paddingClassNames.push("padding-bottom-desktop");
         cssVariables.set("paddingBottomOnDesktop", paddingBottomOnDesktop);
+      }
     }
   });
 

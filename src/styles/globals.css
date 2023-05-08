@@ -672,28 +672,77 @@ main[tabindex="-1"] {
   }
 }
 
-.padding {
+/* Padding */
+
+.padding-left {
   --padding-left: var(--paddingLeftOnMobile);
-  --padding-right: var(--paddingRightOnMobile);
-  --padding-top: var(--paddingTopOnMobile);
-  --padding-bottom: var(--paddingBottomOnMobile);
 
   padding-left: var(--padding-left);
-  padding-right: var(--padding-right);
-  padding-top: var(--padding-top);
-  padding-bottom: var(--padding-bottom);
+}
 
+.padding-left-tablet {
   @media (min-width: 768px) {
-    --padding-left: var(--paddingLeftOnTablet, var(--paddingLeftOnMobile));
-    --padding-right: var(--paddingRightOnTablet, var(--paddingLeftOnMobile));
-    --padding-top: var(--paddingTopOnTablet, var(--paddingLeftOnMobile));
-    --padding-bottom: var(--paddingBottomOnTablet, var(--paddingLeftOnMobile));
-  }
-
-  @media (min-width: 1024px) {
-    --padding-left: var(--paddingLeftOnDesktop, var(--paddingLeftOnTablet));
-    --padding-right: var(--paddingRightOnDesktop, var(--paddingLeftOnTablet));
-    --padding-top: var(--paddingTopOnDesktop, var(--paddingLeftOnTablet));
-    --padding-bottom: var(--paddingBottomOnDesktop, var(--paddingLeftOnTablet));
+    --padding-left: var(--paddingLeftOnTablet);
   }
 }
+
+.padding-left-desktop {
+  @media (min-width: 1024px) {
+    --padding-left: var(--paddingLeftOnDesktop);
+  }
+}
+
+.padding-right {
+  --padding-right: var(--paddingRightOnMobile);
+
+  padding-right: var(--padding-right);
+}
+
+.padding-right-tablet {
+  @media (min-width: 768px) {
+    --padding-right: var(--paddingRightOnTablet);
+  }
+}
+
+.padding-right-desktop {
+  @media (min-width: 1024px) {
+    --padding-right: var(--paddingRightOnDesktop);
+  }
+}
+
+.padding-top {
+  --padding-top: var(--paddingTopOnMobile);
+
+  padding-top: var(--padding-top);
+}
+
+.padding-top-tablet {
+  @media (min-width: 768px) {
+    --padding-top: var(--paddingTopOnTablet);
+  }
+}
+
+.padding-top-desktop {
+  @media (min-width: 1024px) {
+    --padding-top: var(--paddingTopOnDesktop);
+  }
+}
+
+.padding-bottom {
+  --padding-bottom: var(--paddingBottomOnMobile);
+
+  padding-bottom: var(--padding-bottom);
+}
+
+.padding-bottom-tablet {
+  @media (min-width: 768px) {
+    --padding-bottom: var(--paddingBottomOnTablet);
+  }
+}
+
+.padding-bottom-desktop {
+  @media (min-width: 1024px) {
+    --padding-bottom: var(--paddingBottomOnDesktop);
+  }
+}
+/*  */

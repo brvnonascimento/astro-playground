@@ -28,11 +28,13 @@ export const resolvePaddingStyles = (style: Style): RawStyles => {
     }
 
     if (paddingLeftOnTablet) {
+      paddingClassNamesArray.push("padding-left");
       paddingClassNamesArray.push("padding-left-tablet");
       cssVariablesMap.set("paddingLeftOnTablet", paddingLeftOnTablet);
     }
 
     if (paddingLeftOnDesktop) {
+      paddingClassNamesArray.push("padding-left");
       paddingClassNamesArray.push("padding-left-desktop");
       cssVariablesMap.set("paddingLeftOnDesktop", paddingLeftOnDesktop);
     }
@@ -44,12 +46,16 @@ export const resolvePaddingStyles = (style: Style): RawStyles => {
     }
 
     if (paddingRightOnTablet) {
+      paddingClassNamesArray.push("padding-right");
       paddingClassNamesArray.push("padding-right-tablet");
+
       cssVariablesMap.set("paddingRightOnTablet", paddingRightOnTablet);
     }
 
     if (paddingRightOnDesktop) {
+      paddingClassNamesArray.push("padding-right");
       paddingClassNamesArray.push("padding-right-desktop");
+
       cssVariablesMap.set("paddingRightOnDesktop", paddingRightOnDesktop);
     }
 
@@ -59,12 +65,16 @@ export const resolvePaddingStyles = (style: Style): RawStyles => {
     }
 
     if (paddingTopOnTablet) {
+      paddingClassNamesArray.push("padding-top");
       paddingClassNamesArray.push("padding-top-tablet");
+
       cssVariablesMap.set("paddingTopOnTablet", paddingTopOnTablet);
     }
 
     if (paddingTopOnDesktop) {
+      paddingClassNamesArray.push("padding-top");
       paddingClassNamesArray.push("padding-top-desktop");
+
       cssVariablesMap.set("paddingTopOnDesktop", paddingTopOnDesktop);
     }
 
@@ -74,12 +84,16 @@ export const resolvePaddingStyles = (style: Style): RawStyles => {
     }
 
     if (paddingBottomOnTablet) {
+      paddingClassNamesArray.push("padding-bottom");
       paddingClassNamesArray.push("padding-bottom-tablet");
+
       cssVariablesMap.set("paddingBottomOnTablet", paddingBottomOnTablet);
     }
 
     if (paddingBottomOnDesktop) {
+      paddingClassNamesArray.push("padding-bottom");
       paddingClassNamesArray.push("padding-bottom-desktop");
+
       cssVariablesMap.set("paddingBottomOnDesktop", paddingBottomOnDesktop);
     }
   }

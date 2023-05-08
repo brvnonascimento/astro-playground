@@ -1,10 +1,10 @@
 :root {
-  --color-primary: #8b00ff;
+  --color-primary: #f9c632;
   --color-primary-dark: #2b0547;
 
-  --color-background: var(--color-primary-dark);
+  --color-background: #36b4af;
 
-  --color-text: #fff;
+  --color-text: #1a1919;
 
   /* TODO: Check a better way to get this (and without JS) */
   --header-height: 5.03rem;
@@ -784,3 +784,9 @@ main[tabindex="-1"] {
   }
 }
 /*  */
+
+/* Background Color */
+
+.backgroundColor {
+  background-color: var(--backgroundColor, red);
+}

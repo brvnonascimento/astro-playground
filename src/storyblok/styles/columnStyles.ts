@@ -11,6 +11,7 @@ export const resolveColumnStyles = (style: Style): RawStyles => {
       shouldContainerizeOnMobile,
       shouldContainerizeOnTablet,
       shouldContainerizeOnDesktop,
+      backgroundColor,
     } = style;
 
     if (shouldContainerizeOnMobile === false)
@@ -21,6 +22,11 @@ export const resolveColumnStyles = (style: Style): RawStyles => {
 
     if (shouldContainerizeOnDesktop === false)
       columnStylesClassName.push("desktop-escapeContainer");
+
+    if (backgroundColor?.color) {
+      columnStylesClassName.push("backgroundColor");
+      cssVariablesMap.set("backgroundColor", backgroundColor.color);
+    }
   }
 
   return {

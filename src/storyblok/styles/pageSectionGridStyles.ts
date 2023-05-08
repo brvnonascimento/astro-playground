@@ -52,14 +52,20 @@ export const resolvePageSectionGridStyles = (style: Style): RawStyles => {
       cssVariablesMap.set("numberOfColumnsOnDesktop", numberOfColumnsOnDesktop);
 
     // Column Gap
-    if (columnGapOnMobile)
+    if (columnGapOnMobile) {
+      pageSectionGridClassNamesArray.push("columnGap");
       cssVariablesMap.set("columnGapOnMobile", columnGapOnMobile);
+    }
 
-    if (columnGapOnTablet)
+    if (columnGapOnTablet) {
+      pageSectionGridClassNamesArray.push("columnGap-tablet");
       cssVariablesMap.set("columnGapOnTablet", columnGapOnTablet);
+    }
 
-    if (columnGapOnDesktop)
+    if (columnGapOnDesktop) {
+      pageSectionGridClassNamesArray.push("columnGap-desktop");
       cssVariablesMap.set("columnGapOnDesktop", columnGapOnDesktop);
+    }
 
     // Row Gap
     if (rowGapOnMobile) cssVariablesMap.set("rowGapOnMobile", rowGapOnMobile);

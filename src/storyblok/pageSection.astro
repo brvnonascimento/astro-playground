@@ -38,6 +38,8 @@ const sectionClassList = ["pageSection", classNames];
       )
       1fr;
     row-gap: var(--row-gap);
+    column-gap: var(--column-gap);
+    margin-left: calc(var(--column-gap) / 2);
 
     :global(.column:first-child) {
       grid-column: 2;
@@ -91,14 +93,6 @@ const sectionClassList = ["pageSection", classNames];
     &.alignBottomRight {
       align-items: end;
       justify-items: end;
-    }
-
-    /* Column Gap */
-    &.columnGap {
-      /* This is a hack until a better is solution found */
-      :global(.column:not(:last-child)) {
-        width: calc(100% - var(--column-gap));
-      }
     }
 
     @media (max-width: 768px) {

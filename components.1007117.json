@@ -406,7 +406,7 @@
       "name": "column",
       "display_name": null,
       "created_at": "2023-05-03T00:30:40.131Z",
-      "updated_at": "2023-05-07T19:27:40.209Z",
+      "updated_at": "2023-05-08T17:33:54.720Z",
       "id": 74242,
       "schema": {
         "content": {
@@ -421,7 +421,8 @@
             "autoLayout",
             "columnStyles",
             "textStyles",
-            "padding"
+            "padding",
+            "sizing"
           ],
           "component_group_whitelist": []
         }
@@ -812,7 +813,7 @@
       "name": "pageSection",
       "display_name": "Page Section",
       "created_at": "2023-05-02T22:51:54.083Z",
-      "updated_at": "2023-05-07T19:38:43.592Z",
+      "updated_at": "2023-05-08T17:34:10.536Z",
       "id": 74231,
       "schema": {
         "title": {
@@ -839,7 +840,8 @@
           "component_whitelist": [
             "pageSectionGrid",
             "textStyles",
-            "padding"
+            "padding",
+            "sizing"
           ],
           "component_group_whitelist": [],
           "default_value": "fillContainer"
@@ -1193,6 +1195,66 @@
       "component_group_uuid": "051724a1-f338-4385-bc93-ba373664ccc7",
       "color": "#00b3b0",
       "icon": "block-mobile",
+      "component_group_name": "Styles"
+    },
+    {
+      "name": "sizing",
+      "display_name": null,
+      "created_at": "2023-05-08T17:25:43.541Z",
+      "updated_at": "2023-05-08T17:33:39.122Z",
+      "id": 76038,
+      "schema": {
+        "mobile": {
+          "type": "section",
+          "keys": [
+            "minHeightOnMobile",
+            "maxWidthOnMobile"
+          ]
+        },
+        "tablet": {
+          "type": "section",
+          "keys": [
+            "minHeightOnTablet",
+            "maxWidthOnTablet"
+          ]
+        },
+        "desktop": {
+          "type": "section",
+          "keys": [
+            "minHeightOnDesktop",
+            "maxWidthOnDesktop"
+          ]
+        },
+        "minHeightOnMobile": {
+          "type": "text"
+        },
+        "minHeightOnTablet": {
+          "type": "text"
+        },
+        "minHeightOnDesktop": {
+          "type": "text"
+        },
+        "maxWidthOnMobile": {
+          "type": "text"
+        },
+        "maxWidthOnTablet": {
+          "type": "text"
+        },
+        "maxWidthOnDesktop": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "sizing",
+      "component_group_uuid": "051724a1-f338-4385-bc93-ba373664ccc7",
+      "color": "#00b3b0",
+      "icon": "block-wallet",
       "component_group_name": "Styles"
     },
     {

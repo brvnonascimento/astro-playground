@@ -52,7 +52,7 @@ export interface AutoLayoutStoryblok {
 
 export interface ColumnStoryblok {
   content?: any;
-  styles?: (AutoLayoutStoryblok | ColumnStylesStoryblok | TextStylesStoryblok | PaddingStoryblok)[];
+  styles?: (AutoLayoutStoryblok | ColumnStylesStoryblok | TextStylesStoryblok | PaddingStoryblok | SizingStoryblok)[];
   _uid: string;
   component: "column";
   [k: string]: any;
@@ -206,7 +206,7 @@ export interface PageStoryblok {
 export interface PageSectionStoryblok {
   title: string;
   columns?: ColumnStoryblok[];
-  styles?: (PageSectionGridStoryblok | TextStylesStoryblok | PaddingStoryblok)[];
+  styles?: (PageSectionGridStoryblok | TextStylesStoryblok | PaddingStoryblok | SizingStoryblok)[];
   _uid: string;
   component: "pageSection";
   [k: string]: any;
@@ -259,6 +259,21 @@ export interface PageSectionGridStoryblok {
   rowGapOnDesktop?: string;
   _uid: string;
   component: "pageSectionGrid";
+  [k: string]: any;
+}
+
+export interface SizingStoryblok {
+  mobile?: any;
+  tablet?: any;
+  desktop?: any;
+  minHeightOnMobile?: string;
+  minHeightOnTablet?: string;
+  minHeightOnDesktop?: string;
+  maxWidthOnMobile?: string;
+  maxWidthOnTablet?: string;
+  maxWidthOnDesktop?: string;
+  _uid: string;
+  component: "sizing";
   [k: string]: any;
 }
 

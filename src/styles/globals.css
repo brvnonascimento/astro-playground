@@ -746,3 +746,41 @@ main[tabindex="-1"] {
   }
 }
 /*  */
+
+/* Min Height */
+.min-height {
+  --min-height: var(--minHeightOnMobile);
+  min-height: var(--min-height);
+}
+
+.min-height-tablet {
+  @media (min-width: 768px) {
+    --min-height: var(--minHeightOnTablet);
+  }
+}
+
+.min-height-desktop {
+  @media (min-width: 1024px) {
+    --min-height: var(--minHeightOnDesktop);
+  }
+}
+/*  */
+
+/* Max Width */
+.max-width {
+  --max-width: var(--maxWidthOnMobile);
+  max-width: var(--max-width);
+}
+
+.max-width-tablet {
+  @media (min-width: 768px) {
+    --max-width: var(--maxWidthOnTablet);
+  }
+}
+
+.max-width-desktop {
+  @media (min-width: 1024px) {
+    --max-width: var(--maxWidthOnDesktop);
+  }
+}
+/*  */

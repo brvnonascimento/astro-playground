@@ -2,9 +2,9 @@
   --color-primary: #400b65;
   --color-primary-dark: #2b0547;
 
-  --color-background: #36b4af;
+  --color-background: #400b65;
 
-  --color-text: #1a1919;
+  --color-text: #ffffff;
 
   /* TODO: Check a better way to get this (and without JS) */
   --header-height: 5.03rem;
